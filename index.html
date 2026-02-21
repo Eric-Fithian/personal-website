@@ -10,285 +10,274 @@
       --text-secondary: #555;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --border: #e5e5e5;
+      --border: #e0e0e0;
       --bg: #fff;
-      --bg-pub: #fafafa;
+      --card-bg: #fafafa;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto;
       padding: 3rem 1.5rem 4rem;
     }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
 
     /* ── Header ── */
     .header {
       display: flex;
       gap: 1.75rem;
       align-items: flex-start;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     .headshot {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
       flex-shrink: 0;
     }
 
     .header-info h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
+      font-size: 1.6rem;
+      font-weight: 700;
       letter-spacing: -0.01em;
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.2rem;
     }
 
     .header-info .role {
       color: var(--text-secondary);
       font-size: 0.95rem;
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.05rem;
     }
 
-    .header-info .location {
+    .header-info .affiliation {
       color: var(--text-secondary);
-      font-size: 0.875rem;
-      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem 1rem;
+      gap: 0.3rem 0.9rem;
       font-size: 0.875rem;
     }
 
-    .links a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .links a:hover {
-      color: var(--accent-hover);
-      text-decoration: underline;
-    }
-
     /* ── Sections ── */
-    section {
-      margin-bottom: 1.75rem;
-    }
+    section { margin-bottom: 2rem; }
 
     section h2 {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       color: var(--text-secondary);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.65rem;
       padding-bottom: 0.35rem;
       border-bottom: 1px solid var(--border);
     }
 
-    section p {
-      font-size: 0.95rem;
+    section p, section li {
+      font-size: 0.93rem;
       color: var(--text);
     }
 
-    .interests {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      margin-top: 0.4rem;
-    }
-
-    /* ── Publications ── */
-    .pub {
-      background: var(--bg-pub);
+    /* ── Cards ── */
+    .card {
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.75rem;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.65rem;
     }
 
-    .pub-title {
+    .card-title {
       font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 0.15rem;
+      font-size: 0.93rem;
+      margin-bottom: 0.1rem;
     }
 
-    .pub-venue {
-      font-size: 0.85rem;
+    .card-meta {
+      font-size: 0.83rem;
       color: var(--text-secondary);
-      margin-bottom: 0.15rem;
+      margin-bottom: 0.1rem;
     }
 
-    .pub-authors {
-      font-size: 0.85rem;
+    .card-authors {
+      font-size: 0.83rem;
       color: var(--text-secondary);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
 
-    .pub-links {
+    .card-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.825rem;
+      gap: 0.7rem;
+      font-size: 0.8rem;
     }
 
-    .pub-links a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .pub-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Software ── */
-    .software {
-      background: var(--bg-pub);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.85rem 1rem;
-    }
-
-    .software-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .software-desc {
-      font-size: 0.875rem;
+    .card-desc {
+      font-size: 0.87rem;
       color: var(--text-secondary);
-      margin: 0.15rem 0 0.35rem;
+      margin: 0.15rem 0 0.3rem;
     }
 
-    .software-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.825rem;
-    }
-
-    .software-links a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .software-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── Current ── */
-    .current-list {
+    /* ── Research list ── */
+    .research-list {
       list-style: none;
       padding: 0;
     }
 
-    .current-list li {
-      font-size: 0.925rem;
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.3rem;
+    .research-list li {
+      font-size: 0.9rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #f0f0f0;
     }
 
-    .current-list li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
+    .research-list li:last-child { border-bottom: none; }
+
+    .research-list .prof { font-weight: 600; }
+    .research-list .status {
+      font-size: 0.78rem;
       color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-align: center;
     }
 
     /* ── Responsive ── */
-    @media (max-width: 500px) {
+    @media (max-width: 520px) {
       .header {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
-
-      .links {
-        justify-content: center;
-      }
-
-      .container {
-        padding: 2rem 1.25rem 3rem;
-      }
+      .links { justify-content: center; }
+      .container { padding: 2rem 1.25rem 3rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Header -->
     <div class="header">
       <img class="headshot" src="real_headshot.png" alt="Eric Fithian">
       <div class="header-info">
         <h1>Eric Fithian</h1>
-        <div class="role">Predoctoral Fellow, Center for Applied AI &middot; Chicago Booth</div>
-        <div class="location">Chicago, IL</div>
+        <div class="role">Research Professional / Predoctoral Fellow</div>
+        <div class="affiliation">Center for Applied AI &middot; University of Chicago Booth</div>
         <div class="links">
-          <a href="mailto:eric.fithian@icloud.com">Email</a>
+          <a href="mailto:efithian@uchicago.edu">efithian@uchicago.edu</a>
           <a href="cv/cv.pdf">CV</a>
-          <a href="#">Google Scholar</a>
           <a href="https://github.com/Eric-Fithian">GitHub</a>
-          <a href="#">LinkedIn</a>
+          <a href="https://scholar.google.com">Scholar</a>
         </div>
       </div>
     </div>
 
-    <!-- Bio -->
+    <!-- About -->
     <section>
       <h2>About</h2>
       <p>
-        I'm a predoctoral fellow at the Center for Applied AI at Chicago Booth,
-        where I build tools and run experiments at the intersection of large language models
-        and structured data extraction. My work focuses on making LLM-based pipelines
-        reproducible, cost-efficient, and easy to iterate on.
+        I'm a predoctoral fellow at the Center for Applied AI at Chicago Booth.
+        I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA).
+        My work spans multimodal ML, NLP, computer vision, LLM-based data extraction, and agentic AI.
+        I'm applying to CS PhD programs for Fall 2027.
       </p>
-      <p class="interests">
-        Interests: LLM-based data extraction, multimodal model evaluation, applied NLP
-      </p>
+    </section>
+
+    <!-- What I'm thinking about -->
+    <section>
+      <h2>What I'm thinking about<span style="font-weight:400; text-transform:none; letter-spacing:0; color:#999;">(Feb 2026)</span></h2>
+      <ul class="research-list">
+        <li>Latent reasoning in LLMs</li>
+        <li>Adaptive neural network architectures</li>
+      </ul>
+    </section>
+
+    <!-- Current research -->
+    <section>
+      <h2>Current Research</h2>
+      <ul class="research-list">
+        <li><span class="prof">Prof. Suproteem Sarkar</span> &mdash; Embedding models to investigate how stereotypes affect investment</li>
+        <li><span class="prof">Prof. Rad Niazadeh</span> &mdash; Using LLMs to solve open problems in mathematics of operations research</li>
+        <li><span class="prof">Prof. X.Y. Han</span> &mdash; Vision-language models for annotating neurosurgical video recordings</li>
+      </ul>
+    </section>
+
+    <!-- Selected past research -->
+    <section>
+      <h2>Past Research</h2>
+      <ul class="research-list">
+        <li><span class="prof">Prof. Jacob Conway</span> &mdash; End-to-end NLP pipelines across 11M news documents to study journalist ideology</li>
+        <li><span class="prof">Prof. Giovanni Compiani</span> &mdash; Pretrained embedding models for consumer choice models</li>
+        <li><span class="prof">Prof. Theodora Chaspari</span> (CU Boulder) &mdash; Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
+      </ul>
     </section>
 
     <!-- Publications -->
     <section>
       <h2>Publications</h2>
-      <div class="pub">
-        <div class="pub-title"><!-- TODO: paper title -->[ICMI 2025 Paper Title]</div>
-        <div class="pub-venue">ICMI 2025</div>
-        <div class="pub-authors"><!-- TODO: authors -->[Authors]</div>
-        <div class="pub-links">
-          <a href="#">PDF</a>
-          <a href="#">Code</a>
-          <a href="#">Poster</a>
+
+      <div class="card">
+        <div class="card-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
+        <div class="card-meta">ACM ICMI 2025 &middot; Poster presented in Canberra, Australia</div>
+        <div class="card-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
+        <div class="card-links">
+          <a href="https://doi.org/10.1145/3716553.3750757">Paper</a>
         </div>
+      </div>
+    </section>
+
+    <!-- Working papers -->
+    <section>
+      <h2>Working Papers</h2>
+
+      <div class="card">
+        <div class="card-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
+        <div class="card-meta">arXiv preprint, 2026</div>
+        <div class="card-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
+        <div class="card-links">
+          <a href="https://arxiv.org/abs/2509.20617">Paper</a>
+          <a href="https://github.com/Center-for-Applied-AI/delm">Code</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Investigating Neuron-Level Signals for Predicting Beneficial Splitting in Neural Networks</div>
+        <div class="card-meta">Preprint forthcoming, 2026</div>
+        <div class="card-authors"><strong>Eric Fithian</strong></div>
       </div>
     </section>
 
     <!-- Software -->
     <section>
       <h2>Software</h2>
-      <div class="software">
-        <div class="software-title">DELM</div>
-        <div class="software-desc">
-          Python toolkit for reproducible, scalable LLM-based data extraction.
-          Used for structured information extraction from unstructured text across multiple LLM providers.
-        </div>
-        <div class="software-links">
+      <div class="card">
+        <div class="card-title">DELM</div>
+        <div class="card-desc">Python toolkit for reproducible, scalable LLM-based structured data extraction.</div>
+        <div class="card-links">
           <a href="https://github.com/Center-for-Applied-AI/delm">GitHub</a>
           <a href="https://pypi.org/project/delm/">PyPI</a>
           <a href="https://center-for-applied-ai.github.io/delm/">Docs</a>
@@ -296,14 +285,26 @@
       </div>
     </section>
 
-    <!-- Current -->
+    <!-- Education & awards (compact) -->
     <section>
-      <h2>Current</h2>
-      <ul class="current-list">
-        <li>LLM-based data extraction toolkits</li>
-        <li>Multimodal VLM evaluation in surgical video</li>
+      <h2>Education</h2>
+      <p>
+        <strong>University of Colorado Boulder</strong>, B.S. Computer Science, 2022&ndash;2025<br>
+        <em>summa cum laude</em>, 4.0 GPA, Dean's List, graduated one year early
+      </p>
+    </section>
+
+    <section>
+      <h2>Selected Awards</h2>
+      <ul class="research-list">
+        <li><strong>1st Place</strong>, VizWiz VQA Challenge &mdash; among ~150 graduate students, as an undergraduate (2025)</li>
+        <li><strong>CU Engineering Silver Medal nominee</strong> &mdash; one CS senior nominated per year (2025)</li>
       </ul>
     </section>
+
+    <div class="footer">
+      Eric Fithian &middot; Chicago, IL
+    </div>
 
   </div>
 </body>
