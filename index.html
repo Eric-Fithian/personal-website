@@ -10,9 +10,7 @@
       --text-secondary: #555;
       --accent: #2563eb;
       --accent-hover: #1d4ed8;
-      --border: #e0e0e0;
       --bg: #fff;
-      --card-bg: #fafafa;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -85,9 +83,7 @@
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: var(--text-secondary);
-      margin-bottom: 0.65rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.6rem;
     }
 
     section p, section li {
@@ -95,74 +91,62 @@
       color: var(--text);
     }
 
-    /* ── Cards ── */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.8rem 1rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .card-title {
+    /* ── Sub-labels within a section ── */
+    .sub-label {
+      font-size: 0.8rem;
       font-weight: 600;
-      font-size: 0.93rem;
-      margin-bottom: 0.1rem;
-    }
-
-    .card-meta {
-      font-size: 0.83rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.1rem;
-    }
-
-    .card-authors {
-      font-size: 0.83rem;
-      color: var(--text-secondary);
+      color: var(--text);
+      margin-top: 0.9rem;
       margin-bottom: 0.3rem;
     }
 
-    .card-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      font-size: 0.8rem;
+    .sub-label:first-child { margin-top: 0; }
+
+    /* ── Publication entries ── */
+    .pub-entry { margin-bottom: 0.8rem; }
+    .pub-entry:last-child { margin-bottom: 0; }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 0.93rem;
+      line-height: 1.4;
     }
 
-    .card-desc {
-      font-size: 0.87rem;
+    .pub-meta {
+      font-size: 0.83rem;
       color: var(--text-secondary);
-      margin: 0.15rem 0 0.3rem;
     }
 
-    /* ── Research list ── */
-    .research-list {
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+    }
+
+    .pub-links {
+      display: inline;
+      font-size: 0.83rem;
+    }
+
+    .pub-links a { margin-right: 0.6rem; }
+
+    /* ── Simple list ── */
+    .plain-list {
       list-style: none;
       padding: 0;
     }
 
-    .research-list li {
+    .plain-list li {
       font-size: 0.9rem;
-      padding: 0.35rem 0;
-      border-bottom: 1px solid #f0f0f0;
+      padding: 0.25rem 0;
     }
 
-    .research-list li:last-child { border-bottom: none; }
-
-    .research-list .prof { font-weight: 600; }
-    .research-list .status {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      font-style: italic;
-    }
+    .plain-list .prof { font-weight: 600; }
 
     /* ── Footer ── */
     .footer {
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
+      margin-top: 2.5rem;
       font-size: 0.8rem;
-      color: var(--text-secondary);
+      color: #bbb;
       text-align: center;
     }
 
@@ -188,115 +172,98 @@
         <div class="role">Research Professional / Predoctoral Fellow</div>
         <div class="affiliation">Center for Applied AI &middot; University of Chicago Booth</div>
         <div class="links">
-          <a href="mailto:efithian@uchicago.edu">efithian@uchicago.edu</a>
+          <a href="mailto:efithian@uchicago.edu">email</a>
           <a href="cv/cv.pdf">CV</a>
           <a href="https://github.com/Eric-Fithian">GitHub</a>
-          <a href="https://scholar.google.com">Scholar</a>
+          <a href="https://scholar.google.com/citations?user=elXzya4AAAAJ&hl=en">Scholar</a>
         </div>
       </div>
     </div>
 
-    <!-- About -->
     <section>
       <h2>About</h2>
       <p>
         I'm a predoctoral fellow at the Center for Applied AI at Chicago Booth.
-        I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA).
+        I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA, graduated one year early).
         My work spans multimodal ML, NLP, computer vision, LLM-based data extraction, and agentic AI.
         I'm applying to CS PhD programs for Fall 2027.
       </p>
     </section>
 
-    <!-- What I'm thinking about -->
     <section>
-      <h2>What I'm thinking about<span style="font-weight:400; text-transform:none; letter-spacing:0; color:#999;">(Feb 2026)</span></h2>
-      <ul class="research-list">
+      <h2>What I'm reading about <span style="font-weight:400; text-transform:none; letter-spacing:0; color:#bbb;">Feb 2026</span></h2>
+      <ul class="plain-list">
         <li>Latent reasoning in LLMs</li>
         <li>Adaptive neural network architectures</li>
       </ul>
     </section>
 
-    <!-- Current research -->
     <section>
-      <h2>Current Research</h2>
-      <ul class="research-list">
+      <h2>Research</h2>
+
+      <div class="sub-label">Current</div>
+      <ul class="plain-list">
         <li><span class="prof">Prof. Suproteem Sarkar</span> &mdash; Embedding models to investigate how stereotypes affect investment</li>
         <li><span class="prof">Prof. Rad Niazadeh</span> &mdash; Using LLMs to solve open problems in mathematics of operations research</li>
         <li><span class="prof">Prof. X.Y. Han</span> &mdash; Vision-language models for annotating neurosurgical video recordings</li>
       </ul>
-    </section>
 
-    <!-- Selected past research -->
-    <section>
-      <h2>Past Research</h2>
-      <ul class="research-list">
+      <div class="sub-label">Past</div>
+      <ul class="plain-list">
         <li><span class="prof">Prof. Jacob Conway</span> &mdash; End-to-end NLP pipelines across 11M news documents to study journalist ideology</li>
         <li><span class="prof">Prof. Giovanni Compiani</span> &mdash; Pretrained embedding models for consumer choice models</li>
         <li><span class="prof">Prof. Theodora Chaspari</span> (CU Boulder) &mdash; Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
       </ul>
     </section>
 
-    <!-- Publications -->
     <section>
-      <h2>Publications</h2>
+      <h2>Papers</h2>
 
-      <div class="card">
-        <div class="card-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
-        <div class="card-meta">ACM ICMI 2025 &middot; Poster presented in Canberra, Australia</div>
-        <div class="card-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
-        <div class="card-links">
-          <a href="https://doi.org/10.1145/3716553.3750757">Paper</a>
-        </div>
+      <div class="sub-label">Published</div>
+      <div class="pub-entry">
+        <div class="pub-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
+        <div class="pub-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
+        <div class="pub-meta">ACM ICMI 2025 &middot; Poster presented in Canberra, Australia</div>
+        <div class="pub-links"><a href="https://doi.org/10.1145/3716553.3750757">Paper</a></div>
       </div>
-    </section>
 
-    <!-- Working papers -->
-    <section>
-      <h2>Working Papers</h2>
-
-      <div class="card">
-        <div class="card-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
-        <div class="card-meta">arXiv preprint, 2026</div>
-        <div class="card-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
-        <div class="card-links">
+      <div class="sub-label">Working</div>
+      <div class="pub-entry">
+        <div class="pub-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
+        <div class="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
+        <div class="pub-meta">arXiv preprint, 2026</div>
+        <div class="pub-links">
           <a href="https://arxiv.org/abs/2509.20617">Paper</a>
           <a href="https://github.com/Center-for-Applied-AI/delm">Code</a>
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">Investigating Neuron-Level Signals for Predicting Beneficial Splitting in Neural Networks</div>
-        <div class="card-meta">Preprint forthcoming, 2026</div>
-        <div class="card-authors"><strong>Eric Fithian</strong></div>
+      <div class="pub-entry">
+        <div class="pub-title">Do Neuron-Level Metrics Predict Beneficial Splitting in Neural Networks During Training</div>
+        <div class="pub-authors"><strong>Eric Fithian</strong></div>
+        <div class="pub-meta">Preprint forthcoming, 2026</div>
       </div>
     </section>
 
-    <!-- Software -->
     <section>
       <h2>Software</h2>
-      <div class="card">
-        <div class="card-title">DELM</div>
-        <div class="card-desc">Python toolkit for reproducible, scalable LLM-based structured data extraction.</div>
-        <div class="card-links">
-          <a href="https://github.com/Center-for-Applied-AI/delm">GitHub</a>
-          <a href="https://pypi.org/project/delm/">PyPI</a>
-          <a href="https://center-for-applied-ai.github.io/delm/">Docs</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & awards (compact) -->
-    <section>
-      <h2>Education</h2>
       <p>
-        <strong>University of Colorado Boulder</strong>, B.S. Computer Science, 2022&ndash;2025<br>
-        <em>summa cum laude</em>, 4.0 GPA, Dean's List, graduated one year early
+        <strong>DELM</strong> &mdash; Python toolkit for reproducible, scalable LLM-based structured data extraction.<br>
+        <span style="font-size: 0.83rem;">
+          <a href="https://github.com/Center-for-Applied-AI/delm">GitHub</a> &nbsp;
+          <a href="https://pypi.org/project/delm/">PyPI</a> &nbsp;
+          <a href="https://center-for-applied-ai.github.io/delm/">Docs</a>
+        </span>
       </p>
     </section>
 
     <section>
-      <h2>Selected Awards</h2>
-      <ul class="research-list">
+      <h2>Education &amp; Awards</h2>
+      <p>
+        <strong>University of Colorado Boulder</strong>, B.S. Computer Science, 2022&ndash;2025<br>
+        <em>summa cum laude</em>, 4.0 GPA, Dean's List, graduated one year early
+      </p>
+      <ul class="plain-list" style="margin-top: 0.6rem;">
         <li><strong>1st Place</strong>, VizWiz VQA Challenge &mdash; among ~150 graduate students, as an undergraduate (2025)</li>
         <li><strong>CU Engineering Silver Medal nominee</strong> &mdash; one CS senior nominated per year (2025)</li>
       </ul>
