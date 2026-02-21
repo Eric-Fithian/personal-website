@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eric Fithian</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #e5e5e5;
+      --bg: #fff;
+      --bg-pub: #fafafa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      gap: 1.75rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .headshot {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .header-info h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.15rem;
+    }
+
+    .header-info .role {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .header-info .location {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 1.75rem;
+    }
+
+    section h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .interests {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 0.4rem;
+    }
+
+    /* ── Publications ── */
+    .pub {
+      background: var(--bg-pub);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .pub-venue {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.15rem;
+    }
+
+    .pub-authors {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.825rem;
+    }
+
+    .pub-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Software ── */
+    .software {
+      background: var(--bg-pub);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+    }
+
+    .software-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .software-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0.15rem 0 0.35rem;
+    }
+
+    .software-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.825rem;
+    }
+
+    .software-links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .software-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Current ── */
+    .current-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .current-list li {
+      font-size: 0.925rem;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.3rem;
+    }
+
+    .current-list li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--text-secondary);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 500px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .links {
+        justify-content: center;
+      }
+
+      .container {
+        padding: 2rem 1.25rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <img class="headshot" src="real_headshot.png" alt="Eric Fithian">
+      <div class="header-info">
+        <h1>Eric Fithian</h1>
+        <div class="role">Predoctoral Fellow, Center for Applied AI &middot; Chicago Booth</div>
+        <div class="location">Chicago, IL</div>
+        <div class="links">
+          <a href="mailto:efithian@uchicago.edu">Email</a>
+          <a href="#">CV</a>
+          <a href="#">Google Scholar</a>
+          <a href="https://github.com/Eric-Fithian">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <section>
+      <h2>About</h2>
+      <p>
+        I'm a predoctoral fellow at the Center for Applied AI at Chicago Booth,
+        where I build tools and run experiments at the intersection of large language models
+        and structured data extraction. My work focuses on making LLM-based pipelines
+        reproducible, cost-efficient, and easy to iterate on.
+      </p>
+      <p class="interests">
+        Interests: LLM-based data extraction, multimodal model evaluation, applied NLP
+      </p>
+    </section>
+
+    <!-- Publications -->
+    <section>
+      <h2>Publications</h2>
+      <div class="pub">
+        <div class="pub-title"><!-- TODO: paper title -->[ICMI 2025 Paper Title]</div>
+        <div class="pub-venue">ICMI 2025</div>
+        <div class="pub-authors"><!-- TODO: authors -->[Authors]</div>
+        <div class="pub-links">
+          <a href="#">PDF</a>
+          <a href="#">Code</a>
+          <a href="#">Poster</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Software -->
+    <section>
+      <h2>Software</h2>
+      <div class="software">
+        <div class="software-title">DELM</div>
+        <div class="software-desc">
+          Python toolkit for reproducible, scalable LLM-based data extraction.
+          Used for structured information extraction from unstructured text across multiple LLM providers.
+        </div>
+        <div class="software-links">
+          <a href="https://github.com/Center-for-Applied-AI/delm">GitHub</a>
+          <a href="https://pypi.org/project/delm/">PyPI</a>
+          <a href="https://center-for-applied-ai.github.io/delm/">Docs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current -->
+    <section>
+      <h2>Current</h2>
+      <ul class="current-list">
+        <li>LLM-based data extraction toolkits</li>
+        <li>Multimodal VLM evaluation in surgical video</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>
