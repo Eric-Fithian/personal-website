@@ -1,0 +1,128 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{url}
+
+\pagestyle{empty}
+\urlstyle{same}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=[rgb]{0.2,0.4,0.7},
+}
+
+\newcommand{\resumesection}[1]{
+  \vspace{1.5ex}
+  \noindent\textbf{#1}
+  \vspace{0.5ex}\hrule\vspace{1ex}
+}
+
+\newcommand{\awarditem}[2]{\item \parbox[t]{\dimexpr\linewidth-9em\relax}{#1} \hfill #2}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{ERIC FITHIAN}} \\[0.5em]
+\href{mailto:efithian@uchicago.edu}{efithian@uchicago.edu} \quad $|$ \quad \href{https://ericfithian.com}{ericfithian.com}
+\end{center}
+\vspace{1em}
+
+\resumesection{EDUCATION}
+
+\noindent
+\textbf{University of Colorado Boulder} \hfill Boulder, CO \\
+B.S. in Computer Science, \textit{summa cum laude}, GPA: 4.0/4.0 \hfill Aug. 2022 -- May 2025 \\
+\textit{Dean's List all 3 years; graduated one year early}
+
+\resumesection{RESEARCH EXPERIENCE}
+
+\noindent
+\textbf{University of Chicago, Center for Applied AI} \hfill Chicago, IL \\
+\textit{Research Professional} \hfill July 2025 -- Present
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, parsep=0pt, topsep=0.2em]
+    \item (ongoing) RA to \textbf{Prof. Suproteem Sarkar}: Using embedding models to investigate how stereotypes affect investment.
+    \item (ongoing) RA to \textbf{Prof. Rad Niazadeh}: Using LLMs to solve open problems in mathematics of operations research.
+    \item (ongoing) RA to \textbf{Prof. X.Y. Han}: Exploring the application of vision-language models to annotate video recordings of neurosurgical procedures.
+    \item RA to \textbf{Prof. Jacob Conway}: Built end-to-end NLP pipelines covering 11 million news documents to study journalist ideology.
+    \item RA to \textbf{Prof. Giovanni Compiani}: Used pretrained embedding models for consumer choice models of Amazon products.
+    \item With Kirill Skobelev. Co-developed an open-source Python toolkit addressing reproducibility and scalability challenges in LLM-based structured data extraction. [\href{https://arxiv.org/abs/2509.20617}{paper}] [\href{https://github.com/Center-for-Applied-AI/delm}{code}]
+\end{itemize}
+
+\vspace{0.5em}
+\noindent
+\textbf{University of Colorado Boulder, Human Biobehavior Signals Lab} \hfill Boulder, CO \\
+\textit{Research Assistant to Prof. Theodora Chaspari} \hfill June 2024 -- Oct. 2025
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, parsep=0pt, topsep=0.2em]
+    \item First-authored a paper on multimodal hirability prediction using transformer-based NLP and computer vision (OpenFace, FaceNet) combined with multimodal fusion.
+    \item Presented as a poster at ICMI 2025, Canberra, Australia.
+\end{itemize}
+
+\resumesection{PUBLICATIONS}
+
+\noindent
+\textbf{Fithian, Eric} and Theodora Chaspari. Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews. \textit{Proceedings of the 27th ACM International Conference on Multimodal Interaction}, 2025. [\href{https://doi.org/10.1145/3716553.3750757}{paper}]
+
+\resumesection{WORKING PAPERS}
+
+\noindent
+\textbf{Fithian, Eric} and Kirill Skobelev. DELM: a Python toolkit for Data Extraction with Language Models. 2026. \textit{arXiv preprint}. [\href{https://arxiv.org/abs/2509.20617}{paper}] [\href{https://github.com/Center-for-Applied-AI/delm}{code}]
+
+\vspace{0.3em}
+\noindent
+\textbf{Fithian, Eric}. Investigating Neuron-Level Signals for Predicting Beneficial Splitting in Neural Networks. 2026. \textit{Preprint forthcoming}.
+
+\resumesection{INDUSTRY EXPERIENCE}
+
+\noindent
+\textbf{Spectrum / Charter Communications} \hfill Denver, CO \\
+\textit{Software Engineering Intern} \hfill June 2024 -- Aug. 2024
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, parsep=0pt, topsep=0.2em]
+    \item Developed a mobile data usage simulation service.
+    \item Reverse-engineered legacy Perl and Shell scripts to fix critical production bugs.
+\end{itemize}
+
+\resumesection{PROJECTS \& SOFTWARE}
+
+\noindent
+\textbf{DELM} (Data Extraction with Language Models): Python toolkit for reproducible LLM-based structured data extraction. [\href{https://github.com/Center-for-Applied-AI/delm}{GitHub}] [\href{https://pypi.org/project/delm/}{PyPI}] [\href{https://center-for-applied-ai.github.io/delm/}{Docs}]
+
+\vspace{0.3em}
+\noindent
+\textbf{VizWiz VQA Challenge:} Designed a custom ViT+BERT backbone with bidirectional cross-attention transformer architecture for visual question answering; 1st place among $\sim$150 graduate students as an undergraduate. [\href{https://github.com/Eric-Fithian/Lab3-VizWiz}{GitHub}] 
+
+
+\vspace{0.3em}
+\noindent
+\textbf{Java CNN Library:} Built a Convolutional Neural Network framework from scratch in Java, including convolutions, pooling, backpropagation, SGD with momentum, and activations. Validated on MNIST.
+
+\vspace{0.3em}
+\noindent
+\textbf{Truth or Drink AI:} AI-powered party game using a Bayesian framework and dynamic LLM agent orchestration. Live at \href{https://aitruthordrink.com}{aitruthordrink.com}.
+
+\resumesection{HONORS AND AWARDS}
+
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, parsep=0pt, topsep=0.2em]
+    \awarditem{1st Place, VizWiz VQA Challenge (among $\sim$150 graduate students, as an undergraduate)}{2025}
+    \awarditem{Computer Science departmental nominee for CU Boulder College of Engineering Silver Medal (one senior nominated per department annually)}{2025}
+    \awarditem{\textit{summa cum laude}}{2025}
+    \awarditem{Dean's List all 3 years}{2022--2025}
+\end{itemize}
+
+\resumesection{VOLUNTEERING AND OTHER}
+
+\noindent
+Volunteer Software Engineer, Blueprint Boulder \hfill 2023 -- 2024 \\
+Private Tutor, Computer Science and Calculus \hfill 2022 -- 2024
+
+\resumesection{SKILLS}
+
+\noindent
+\textbf{Coding:} Python (PyTorch, transformers, pandas, numpy), Java, C++, SQL, Git, LaTeX. \\
+\textbf{Machine Learning \& AI:} LLMs, NLP, Multimodal ML, Computer Vision, RL.
+
+\end{document}
