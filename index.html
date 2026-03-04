@@ -40,12 +40,198 @@
       margin-bottom: 2.5rem;
     }
 
-    .headshot {
+    .headshot-stage {
       width: 130px;
       height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
+      position: relative;
       flex-shrink: 0;
+      perspective: 900px;
+      transform-style: preserve-3d;
+      isolation: isolate;
+    }
+
+    .headshot-city {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(180deg, #9fc6ff 0%, #7e9ad6 46%, #5f6f9d 100%);
+      transition: background 320ms ease;
+      pointer-events: none;
+    }
+
+    .city-layer {
+      position: absolute;
+      inset: 0;
+      will-change: transform;
+      transition: transform 120ms ease-out, background 320ms ease;
+      pointer-events: none;
+    }
+
+    .city-sky {
+      z-index: 1;
+      background:
+        radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0) 42%),
+        radial-gradient(circle at 78% 19%, rgba(255, 214, 179, 0.55) 0%, rgba(255, 214, 179, 0) 30%);
+    }
+
+    .city-far {
+      z-index: 2;
+      background: rgba(74, 93, 136, 0.58);
+      clip-path: polygon(0 58%, 9% 50%, 17% 55%, 25% 46%, 34% 54%, 42% 45%, 52% 53%, 61% 48%, 71% 55%, 82% 46%, 90% 52%, 100% 48%, 100% 100%, 0 100%);
+    }
+
+    .city-mid {
+      z-index: 3;
+      background: rgba(41, 54, 92, 0.72);
+      clip-path: polygon(0 66%, 8% 55%, 15% 61%, 24% 50%, 31% 58%, 39% 47%, 49% 60%, 58% 50%, 66% 58%, 75% 49%, 86% 60%, 94% 52%, 100% 57%, 100% 100%, 0 100%);
+    }
+
+    .city-near {
+      z-index: 4;
+      background: rgba(23, 32, 58, 0.86);
+      clip-path: polygon(0 74%, 6% 66%, 13% 72%, 20% 63%, 28% 74%, 35% 60%, 45% 71%, 54% 62%, 63% 74%, 72% 63%, 82% 76%, 90% 66%, 100% 72%, 100% 100%, 0 100%);
+    }
+
+    .city-haze {
+      z-index: 5;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 45%, rgba(189, 206, 244, 0.22) 78%, rgba(166, 184, 228, 0.4) 100%);
+    }
+
+    .headshot-stage.theme-forest .headshot-city {
+      background: linear-gradient(180deg, #e8f3ef 0%, #a5c8b9 44%, #5e8374 100%);
+    }
+
+    .headshot-stage.theme-forest .city-sky {
+      background:
+        radial-gradient(circle at 68% 18%, rgba(255, 250, 209, 0.52) 0%, rgba(255, 250, 209, 0) 24%),
+        radial-gradient(ellipse at 30% 40%, rgba(182, 229, 202, 0.45) 0%, rgba(182, 229, 202, 0) 56%),
+        linear-gradient(90deg, rgba(29, 62, 43, 0.42) 0%, rgba(29, 62, 43, 0) 14%, rgba(29, 62, 43, 0) 86%, rgba(29, 62, 43, 0.38) 100%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 55%);
+    }
+
+    .headshot-stage.theme-forest .city-far {
+      background: rgba(112, 155, 127, 0.48);
+      clip-path: polygon(0 60%, 5% 50%, 10% 60%, 15% 48%, 20% 60%, 25% 46%, 30% 60%, 36% 47%, 42% 61%, 48% 49%, 54% 60%, 60% 48%, 66% 61%, 72% 50%, 78% 60%, 84% 48%, 90% 61%, 95% 50%, 100% 60%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-forest .city-mid {
+      background: rgba(67, 112, 86, 0.72);
+      clip-path: polygon(0 70%, 6% 56%, 12% 70%, 18% 54%, 24% 70%, 30% 52%, 36% 69%, 43% 53%, 50% 71%, 57% 54%, 64% 70%, 71% 52%, 78% 70%, 85% 55%, 92% 71%, 100% 58%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-forest .city-near {
+      background: rgba(35, 68, 49, 0.88);
+      clip-path: polygon(0 100%, 0 80%, 8% 70%, 16% 81%, 24% 68%, 32% 82%, 40% 66%, 48% 81%, 56% 68%, 64% 82%, 72% 69%, 80% 81%, 88% 70%, 96% 83%, 100% 78%, 100% 100%);
+    }
+    .headshot-stage.theme-forest .city-haze {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 44%, rgba(213, 244, 221, 0.2) 75%, rgba(154, 203, 173, 0.34) 100%);
+    }
+
+    .headshot-stage.theme-desert .headshot-city {
+      background: linear-gradient(180deg, #ffd8b1 0%, #f7a66f 44%, #c56f4b 100%);
+    }
+
+    .headshot-stage.theme-desert .city-sky {
+      background:
+        radial-gradient(circle at 78% 20%, rgba(255, 248, 210, 0.72) 0%, rgba(255, 248, 210, 0) 22%),
+        radial-gradient(ellipse at 32% 42%, rgba(255, 197, 138, 0.34) 0%, rgba(255, 197, 138, 0) 56%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%);
+    }
+
+    .headshot-stage.theme-desert .city-far {
+      background: rgba(227, 156, 95, 0.58);
+      clip-path: polygon(0 60%, 10% 56%, 20% 58%, 30% 55%, 40% 58%, 50% 54%, 60% 58%, 70% 55%, 80% 58%, 90% 56%, 100% 58%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-desert .city-mid {
+      background: rgba(194, 111, 64, 0.76);
+      clip-path: polygon(0 68%, 8% 64%, 16% 66%, 25% 62%, 35% 65%, 45% 61%, 55% 65%, 66% 62%, 77% 66%, 88% 63%, 100% 66%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-desert .city-near {
+      background: rgba(146, 76, 46, 0.9);
+      clip-path: polygon(0 100%, 0 76%, 11% 73%, 22% 75%, 33% 71%, 44% 74%, 56% 70%, 67% 75%, 78% 71%, 89% 76%, 100% 73%, 100% 100%);
+    }
+    .headshot-stage.theme-desert .city-haze {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 47%, rgba(255, 218, 175, 0.2) 74%, rgba(239, 154, 105, 0.32) 100%);
+    }
+
+    .headshot-stage.theme-snow .headshot-city {
+      background: linear-gradient(180deg, #dcecff 0%, #a8c3e6 44%, #6a87af 100%);
+    }
+
+    .headshot-stage.theme-snow .city-sky {
+      background:
+        radial-gradient(circle at 76% 20%, rgba(255, 251, 236, 0.7) 0%, rgba(255, 251, 236, 0) 24%),
+        radial-gradient(ellipse at 30% 34%, rgba(228, 242, 255, 0.44) 0%, rgba(228, 242, 255, 0) 56%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 58%);
+    }
+
+    .headshot-stage.theme-snow .city-far {
+      background: rgba(167, 190, 218, 0.62);
+      clip-path: polygon(0 58%, 8% 50%, 15% 55%, 23% 44%, 31% 54%, 40% 43%, 48% 56%, 58% 45%, 67% 54%, 77% 44%, 86% 55%, 94% 47%, 100% 52%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-snow .city-mid {
+      background: rgba(106, 131, 166, 0.78);
+      clip-path: polygon(0 68%, 9% 61%, 18% 66%, 28% 57%, 37% 68%, 46% 56%, 56% 67%, 65% 58%, 75% 69%, 84% 59%, 93% 70%, 100% 63%, 100% 100%, 0 100%);
+    }
+    .headshot-stage.theme-snow .city-near {
+      background: rgba(63, 85, 114, 0.88);
+      clip-path: polygon(0 100%, 0 79%, 10% 73%, 20% 77%, 31% 69%, 42% 78%, 53% 70%, 64% 79%, 75% 71%, 86% 80%, 95% 74%, 100% 77%, 100% 100%);
+    }
+    .headshot-stage.theme-snow .city-haze {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 46%, rgba(226, 240, 255, 0.24) 74%, rgba(186, 208, 236, 0.4) 100%);
+    }
+
+    .headshot-glow {
+      position: absolute;
+      inset: 14px;
+      z-index: 2;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0.03) 62%, transparent 75%);
+      transform: translate3d(0, 0, 0);
+      filter: blur(1px);
+      transition: transform 120ms ease-out, opacity 120ms ease-out;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .headshot-fg-clip {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      border-radius: 50%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .headshot-foreground {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 46%;
+      -webkit-mask-image: url("real_headshot-removebg-preview.png");
+      -webkit-mask-size: cover;
+      -webkit-mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-image: url("real_headshot-removebg-preview.png");
+      mask-size: cover;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18));
+      transform: translate3d(0, 0, 24px);
+      will-change: transform;
+      transition: transform 120ms ease-out, filter 120ms ease-out;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @supports not ((mask-image: url("")) or (-webkit-mask-image: url(""))) {
+      .headshot-foreground {
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
     }
 
     .header-info h1 {
@@ -166,7 +352,19 @@
   <div class="container">
 
     <div class="header">
-      <img class="headshot" src="real_headshot.png" alt="Eric Fithian">
+      <div class="headshot-stage" id="headshot-stage" role="button" tabindex="0" aria-label="Change headshot background theme">
+        <div class="headshot-city">
+          <div class="city-layer city-sky" id="city-sky"></div>
+          <div class="city-layer city-far" id="city-far"></div>
+          <div class="city-layer city-mid" id="city-mid"></div>
+          <div class="city-layer city-near" id="city-near"></div>
+          <div class="city-layer city-haze" id="city-haze"></div>
+        </div>
+        <div class="headshot-glow" id="headshot-glow"></div>
+        <div class="headshot-fg-clip">
+          <img class="headshot-foreground" id="headshot" src="real_headshot.png" alt="">
+        </div>
+      </div>
       <div class="header-info">
         <h1>Eric Fithian</h1>
         <div class="role">Research Professional / Predoctoral Fellow</div>
@@ -274,5 +472,142 @@
     </div>
 
   </div>
+  <script>
+    (() => {
+      const stage = document.getElementById("headshot-stage");
+      const headshot = document.getElementById("headshot");
+      const glow = document.getElementById("headshot-glow");
+      const citySky = document.getElementById("city-sky");
+      const cityFar = document.getElementById("city-far");
+      const cityMid = document.getElementById("city-mid");
+      const cityNear = document.getElementById("city-near");
+      const cityHaze = document.getElementById("city-haze");
+      if (!stage || !headshot || !glow || !citySky || !cityFar || !cityMid || !cityNear || !cityHaze) {
+        return;
+      }
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const isCoarsePointer = window.matchMedia("(pointer: coarse)");
+      const themes = ["theme-forest", "theme-desert", "theme-snow"];
+      let themeIndex = 0;
+      let pointerX = window.innerWidth / 2;
+      let pointerY = window.innerHeight / 2;
+      let rafPending = false;
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+      const addMediaQueryChangeListener = (mediaQueryList, handler) => {
+        if (typeof mediaQueryList.addEventListener === "function") {
+          mediaQueryList.addEventListener("change", handler);
+          return;
+        }
+        if (typeof mediaQueryList.addListener === "function") {
+          mediaQueryList.addListener(handler);
+          return;
+        }
+        throw new Error("MediaQueryList change listeners are not supported in this browser.");
+      };
+
+      const resetTransforms = () => {
+        stage.style.transform = "rotateX(0deg) rotateY(0deg)";
+        headshot.style.transform = "translate3d(0px, 0px, 24px) rotateX(0deg) rotateY(0deg)";
+        glow.style.transform = "translate3d(0px, 0px, 0px)";
+        glow.style.opacity = "0.8";
+        citySky.style.transform = "translate3d(0px, 0px, 0px)";
+        cityFar.style.transform = "translate3d(0px, 0px, 0px)";
+        cityMid.style.transform = "translate3d(0px, 0px, 0px)";
+        cityNear.style.transform = "translate3d(0px, 0px, 0px)";
+        cityHaze.style.transform = "translate3d(0px, 0px, 0px)";
+      };
+
+      const applyTheme = () => {
+        for (const themeName of themes) {
+          stage.classList.remove(themeName);
+        }
+        stage.classList.add(themes[themeIndex]);
+      };
+
+      const cycleTheme = () => {
+        themeIndex = (themeIndex + 1) % themes.length;
+        applyTheme();
+        requestUpdate();
+      };
+
+      const updateParallax = () => {
+        rafPending = false;
+        if (prefersReducedMotion.matches) {
+          resetTransforms();
+          return;
+        }
+
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollNorm = maxScroll > 0 ? (window.scrollY / maxScroll) * 2 - 1 : 0;
+        const rect = stage.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const cursorX = isCoarsePointer.matches ? centerX : pointerX;
+        const cursorY = isCoarsePointer.matches ? centerY : pointerY;
+
+        const normalizedX = clamp((cursorX - centerX) / (window.innerWidth * 0.45), -1, 1);
+        const normalizedY = clamp((cursorY - centerY) / (window.innerHeight * 0.45), -1, 1);
+
+        const rotateX = (-normalizedY * 12) + (scrollNorm * 4);
+        const rotateY = (normalizedX * 15) + (scrollNorm * -2);
+        const translateX = normalizedX * 3.5;
+        const translateY = (normalizedY * 2.5) - (scrollNorm * 2.25);
+        const depth = 24 + Math.abs(normalizedX) * 1.75 + Math.abs(normalizedY) * 1.25;
+        const glowX = normalizedX * 16;
+        const glowY = normalizedY * 12;
+        const skyX = normalizedX * -4;
+        const skyY = (normalizedY * -2) - (scrollNorm * 2);
+        const farX = normalizedX * -7;
+        const farY = (normalizedY * -3) - (scrollNorm * 3.5);
+        const midX = normalizedX * -10;
+        const midY = (normalizedY * -5) - (scrollNorm * 5.5);
+        const nearX = normalizedX * -14;
+        const nearY = (normalizedY * -7) - (scrollNorm * 8);
+
+        stage.style.transform = `rotateX(${rotateX * 0.18}deg) rotateY(${rotateY * 0.14}deg)`;
+        headshot.style.transform = `translate3d(${translateX}px, ${translateY}px, ${depth}px) rotateX(${rotateX * 0.25}deg) rotateY(${rotateY * 0.25}deg)`;
+        headshot.style.filter = `drop-shadow(${-translateX * 0.5}px ${12 + Math.abs(translateY)}px 18px rgba(0, 0, 0, 0.22))`;
+        glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0px)`;
+        glow.style.opacity = String(0.72 + (1 - Math.min(1, Math.abs(scrollNorm))) * 0.2);
+        citySky.style.transform = `translate3d(${skyX}px, ${skyY}px, 0px)`;
+        cityFar.style.transform = `translate3d(${farX}px, ${farY}px, 0px)`;
+        cityMid.style.transform = `translate3d(${midX}px, ${midY}px, 0px)`;
+        cityNear.style.transform = `translate3d(${nearX}px, ${nearY}px, 0px)`;
+        cityHaze.style.transform = `translate3d(${nearX * 0.65}px, ${nearY * 0.55}px, 0px)`;
+      };
+
+      const requestUpdate = () => {
+        if (!rafPending) {
+          rafPending = true;
+          window.requestAnimationFrame(updateParallax);
+        }
+      };
+
+      window.addEventListener("mousemove", (event) => {
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        requestUpdate();
+      }, { passive: true });
+
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate, { passive: true });
+      addMediaQueryChangeListener(prefersReducedMotion, requestUpdate);
+      addMediaQueryChangeListener(isCoarsePointer, requestUpdate);
+      stage.addEventListener("click", cycleTheme);
+      stage.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+          return;
+        }
+        event.preventDefault();
+        cycleTheme();
+      });
+
+      applyTheme();
+      requestUpdate();
+    })();
+  </script>
 </body>
 </html>
