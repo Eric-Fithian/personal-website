@@ -1,0 +1,22 @@
+{
+  "gravity": 9.8,
+  "massCart": 1.0,
+  "massPole": 0.1,
+  "halfPoleLength": 0.5,
+  "forceMag": 12.0,
+  "controlAccelerationScale": 0.35,
+  "cartLinearDrag": 0.08,
+  "poleAngularDamping": 0.015,
+  "stepsPerSecond": 120,
+  "trackHalfLength": 2.4,
+  "maxSpeed": 1.8,
+  "maxWindForce": 60.0,
+  "clickWindForce": 15.0,
+  "windDecayPerSecond": 9.0,
+  "windActiveDurationSeconds": 0.06,
+  "windCartCoupling": 0.03,
+  "windPoleCoupling": 0.9,
+  "windImpulseGain": 7.5,
+  "thetaDotRef": 6.283185307179586,
+  "cartBounceRestitution": 0.55
+}
