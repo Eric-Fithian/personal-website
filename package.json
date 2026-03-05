@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "mkdir -p public/cv && cp cv/cv.pdf public/cv/ 2>/dev/null || true && vite build",
     "preview": "vite preview",
     "lint": "eslint ."
   },

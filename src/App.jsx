@@ -583,10 +583,10 @@ function App() {
             <div className="role">Research Professional / Predoctoral Fellow</div>
             <div className="affiliation">Center for Applied AI · University of Chicago Booth</div>
             <div className="links">
-              <a href="mailto:efithian@uchicago.edu">Email</a>
-              <a href="cv/cv.pdf">CV</a>
-              <a href="https://github.com/Eric-Fithian">GitHub</a>
-              <a href="https://scholar.google.com/citations?user=elXzya4AAAAJ&hl=en">Scholar</a>
+              <a href="mailto:efithian@uchicago.edu" target="_blank" rel="noopener noreferrer">Email</a>
+              <a href="/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+              <a href="https://github.com/Eric-Fithian" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://scholar.google.com/citations?user=elXzya4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
             </div>
           </div>
         </div>
@@ -632,7 +632,7 @@ function App() {
             <div className="pub-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
             <div className="pub-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
             <div className="pub-meta">ACM ICMI 2025 · Poster presented in Canberra, Australia</div>
-            <div className="pub-links"><a href="https://doi.org/10.1145/3716553.3750757">Paper</a></div>
+            <div className="pub-links"><a href="https://doi.org/10.1145/3716553.3750757" target="_blank" rel="noopener noreferrer">Paper</a></div>
           </div>
 
           <div className="sub-label">Working</div>
@@ -641,8 +641,8 @@ function App() {
             <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
             <div className="pub-meta">arXiv preprint, 2026</div>
             <div className="pub-links">
-              <a href="https://arxiv.org/abs/2509.20617">Paper</a>
-              <a href="https://github.com/Center-for-Applied-AI/delm">Code</a>
+              <a href="https://arxiv.org/abs/2509.20617" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">Code</a>
             </div>
           </div>
 
@@ -658,9 +658,9 @@ function App() {
           <p>
             <strong>DELM</strong> — Python toolkit for reproducible, scalable LLM-based structured data extraction.<br />
             <span className="software-links">
-              <a href="https://github.com/Center-for-Applied-AI/delm">GitHub</a> &nbsp;
-              <a href="https://pypi.org/project/delm/">PyPI</a> &nbsp;
-              <a href="https://center-for-applied-ai.github.io/delm/">Docs</a>
+              <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">GitHub</a> &nbsp;
+              <a href="https://pypi.org/project/delm/" target="_blank" rel="noopener noreferrer">PyPI</a> &nbsp;
+              <a href="https://center-for-applied-ai.github.io/delm/" target="_blank" rel="noopener noreferrer">Docs</a>
             </span>
           </p>
         </section>
