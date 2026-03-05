@@ -368,6 +368,7 @@ section li {
   height: 92px;
   margin: 1.5rem 0 0;
   overflow: visible;
+  touch-action: none;
 }
 
 .cart-hint {

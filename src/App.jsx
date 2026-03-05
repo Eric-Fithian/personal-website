@@ -185,8 +185,12 @@ function App() {
     }
 
     const cartWidth = 30;
+    const jumpVelocityPx = 320;
+    const gravityPx = 1200;
     let x = 0;
     let xDot = 0;
+    let y = 0;
+    let yDot = 0;
     let theta = Math.random() * 2 * Math.PI - Math.PI;
     let thetaDot = 0;
     let lastTimestamp = performance.now();
@@ -194,9 +198,8 @@ function App() {
     let accumulator = 0;
     let windForce = 0;
     let windAgeSeconds = Number.POSITIVE_INFINITY;
-    let lastMouseTimestamp = 0;
-    let lastMouseX = 0;
     let wallHitCount = 0;
+    const keysPressed = new Set();
 
     const gravity = cartPoleConfig.gravity;
     const massCart = cartPoleConfig.massCart;
@@ -212,27 +215,28 @@ function App() {
     const trackHalfLength = cartPoleConfig.trackHalfLength;
     const maxSpeed = cartPoleConfig.maxSpeed;
     const windDecayPerSecond = cartPoleConfig.windDecayPerSecond;
-    const windImpulseGain = 7.5;
-    const maxWindForce = cartPoleConfig.maxWindForce;
-    const clickWindImpulse = cartPoleConfig.clickWindForce;
     const windActiveDurationSeconds = cartPoleConfig.windActiveDurationSeconds;
+    const throwVelocityGain = 0.8;
+    const trackYpx = 52;
     const windCartCoupling = cartPoleConfig.windCartCoupling;
     const windPoleCoupling = cartPoleConfig.windPoleCoupling;
     const cartBounceRestitution = cartPoleConfig.cartBounceRestitution;
     const thetaDotRef = cartPoleConfig.thetaDotRef ?? 4 * Math.PI;
+    const keyboardForce = forceMag * 0.4;
 
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
     const maxXpx = () => Math.max(0, cartZone.getBoundingClientRect().width - cartWidth);
     const metersToPixels = () => maxXpx() / (trackHalfLength * 2);
     const cartXToPixels = () => (x + trackHalfLength) * metersToPixels();
-    const pendulumPivotX = () => {
-      const cartRect = cart.getBoundingClientRect();
-      return cartRect.left + (cartRect.width * 0.5);
-    };
-    const applyWindImpulse = (rawImpulse) => {
-      windForce = clamp(rawImpulse, -maxWindForce, maxWindForce);
-      windAgeSeconds = 0;
-    };
+    const pixelsToMeters = () => (trackHalfLength * 2) / maxXpx();
+    let isDragging = false;
+    let dragXDot = 0;
+    let dragYDot = 0;
+    let prevXDot = 0;
+    let prevYDot = 0;
+    const dragHistory = [];
+    const dragHistoryMaxLen = 5;
+
     const updateCartDamageVisual = () => {
       const damageLevel = wallHitCount >= 2 ? 3 : wallHitCount + 1;
       cart.dataset.damageLevel = String(damageLevel);
@@ -246,7 +250,7 @@ function App() {
     const render = () => {
       const cartPx = cartXToPixels();
       cart.style.setProperty("--cart-x", `${cartPx}px`);
-      cart.style.transform = `translateX(${cartPx}px)`;
+      cart.style.transform = `translate(${cartPx}px, ${y}px)`;
       if (pendulum) {
         pendulum.style.transform = `rotate(${theta}rad)`;
       }
@@ -255,6 +259,10 @@ function App() {
     const centerCart = () => {
       x = 0;
       xDot = 0;
+      y = 0;
+      yDot = 0;
+      prevXDot = 0;
+      prevYDot = 0;
       render();
     };
 
@@ -300,6 +308,12 @@ function App() {
         }
       }
 
+      const cartXAcc = dt > 0 ? (xDot - prevXDot) / dt : 0;
+      const cartYAccPx = dt > 0 ? (yDot - prevYDot) / dt : 0;
+      const cartYAccM = cartYAccPx * pixelsToMeters();
+      prevXDot = xDot;
+      prevYDot = yDot;
+
       const trackLen = trackHalfLength * 2;
       const leftNorm = (x + trackHalfLength) / trackLen;
       const rightNorm = (trackHalfLength - x) / trackLen;
@@ -308,14 +322,27 @@ function App() {
       const cosTheta = Math.cos(theta);
       const thetaDotNorm = thetaDot / thetaDotRef;
       const windNorm = windForce / forceMag;
+      const userControlActive = keysPressed.size > 0;
       const observation = [leftNorm, rightNorm, xDotNorm, sinTheta, cosTheta, thetaDotNorm, windNorm];
-      const action = policyAction(observation);
+      const action = userControlActive ? 0 : policyAction(observation);
       const controlForce = action * forceMag * controlAccelerationScale;
-      const force = controlForce + (windCartCoupling * windForce);
+      let keyboardForceApplied = 0;
+      if (keysPressed.has("ArrowLeft")) {
+        keyboardForceApplied -= keyboardForce;
+      }
+      if (keysPressed.has("ArrowRight")) {
+        keyboardForceApplied += keyboardForce;
+      }
+      let force = controlForce + (windCartCoupling * windForce) + keyboardForceApplied;
+      if (isDragging) {
+        force += totalMass * cartXAcc;
+      }
 
+      const inAir = y < 0 || yDot !== 0;
+      const pendulumGravity = inAir ? gravity - cartYAccM : gravity;
       const temp = (force + poleMassLength * thetaDot * thetaDot * sinTheta - cartLinearDrag * xDot) / totalMass;
       const thetaAcc = (
-        gravity * sinTheta -
+        pendulumGravity * sinTheta -
         cosTheta * temp -
         poleAngularDamping * thetaDot +
         (windPoleCoupling * windForce)
@@ -328,6 +355,14 @@ function App() {
       thetaDot += thetaAcc * dt;
       theta += thetaDot * dt;
 
+      if (y < 0 || yDot !== 0) {
+        yDot += gravityPx * dt;
+        y += yDot * dt;
+        if (y >= 0) {
+          y = 0;
+          yDot = 0;
+        }
+      }
       if (x < -trackHalfLength) {
         x = -trackHalfLength;
         if (xDot < 0) {
@@ -348,61 +383,151 @@ function App() {
       const dt = Math.min(0.05, (timestamp - lastTimestamp) / 1000);
       lastTimestamp = timestamp;
       accumulator += dt;
-
       while (accumulator >= integrationStep) {
+        let savedX; let savedY;
+        if (isDragging) {
+          savedX = x;
+          savedY = y;
+          xDot = dragXDot;
+          yDot = dragYDot;
+        }
         simulateStep(integrationStep);
+        if (isDragging) {
+          x = savedX;
+          y = savedY;
+          xDot = dragXDot;
+          yDot = dragYDot;
+          prevXDot = dragXDot;
+          prevYDot = dragYDot;
+        }
         accumulator -= integrationStep;
       }
-
       render();
       animationFrameId = window.requestAnimationFrame(simulate);
     };
 
-    const onMouseMoveWind = (event) => {
-      if (shouldIgnoreKeyControls()) {
-        return;
-      }
-      const now = performance.now();
-      if (lastMouseTimestamp === 0) {
-        lastMouseTimestamp = now;
-        lastMouseX = event.clientX;
-        return;
-      }
-      const dtMs = Math.max(1, now - lastMouseTimestamp);
-      const dx = event.clientX - lastMouseX;
-      const velocityX = dx / dtMs;
-      applyWindImpulse(velocityX * windImpulseGain);
-      lastMouseTimestamp = now;
-      lastMouseX = event.clientX;
+    const getPointerInZone = (clientX, clientY) => {
+      const zoneRect = cartZone.getBoundingClientRect();
+      return { px: clientX - zoneRect.left, py: clientY - zoneRect.top };
     };
 
-    const onMouseClickWind = (event) => {
+    const isPointerOverCart = (clientX, clientY) => {
+      const cartRect = cart.getBoundingClientRect();
+      const inCart = clientX >= cartRect.left && clientX <= cartRect.right &&
+        clientY >= cartRect.top && clientY <= cartRect.bottom;
+      if (inCart) return true;
+      if (pendulum) {
+        const pendRect = pendulum.getBoundingClientRect();
+        return clientX >= pendRect.left && clientX <= pendRect.right &&
+          clientY >= pendRect.top && clientY <= pendRect.bottom;
+      }
+      return false;
+    };
+
+    const onPointerDown = (event) => {
       if (shouldIgnoreKeyControls()) {
         return;
       }
-      const clickOffsetFromPendulum = event.clientX - pendulumPivotX();
-      if (clickOffsetFromPendulum === 0) {
+      if (!isPointerOverCart(event.clientX, event.clientY)) {
         return;
       }
-      const impulseDirection = clickOffsetFromPendulum > 0 ? -1 : 1;
-      applyWindImpulse(impulseDirection * clickWindImpulse);
+      event.preventDefault();
+      cartZone.setPointerCapture(event.pointerId);
+      isDragging = true;
+      keysPressed.add("drag");
+      dragXDot = 0;
+      dragYDot = 0;
+      const { px, py } = getPointerInZone(event.clientX, event.clientY);
+      dragHistory.length = 0;
+      dragHistory.push({ px, py, t: performance.now() });
+      const xMeters = (px - cartWidth / 2) * pixelsToMeters() - trackHalfLength;
+      x = clamp(xMeters, -trackHalfLength, trackHalfLength);
+      y = Math.min(0, py - trackYpx);
+    };
+
+    const onPointerMove = (event) => {
+      if (!isDragging) {
+        return;
+      }
+      const { px, py } = getPointerInZone(event.clientX, event.clientY);
+      const now = performance.now();
+      if (dragHistory.length === 0 || now - dragHistory[dragHistory.length - 1].t >= 16) {
+        dragHistory.push({ px, py, t: now });
+        if (dragHistory.length > dragHistoryMaxLen) {
+          dragHistory.shift();
+        }
+      } else {
+        dragHistory[dragHistory.length - 1] = { px, py, t: now };
+      }
+      if (dragHistory.length >= 2) {
+        const last = dragHistory[dragHistory.length - 1];
+        const prev = dragHistory[dragHistory.length - 2];
+        const dtSec = (last.t - prev.t) / 1000;
+        if (dtSec > 0.001) {
+          dragXDot = clamp((last.px - prev.px) * pixelsToMeters() / dtSec, -maxSpeed, maxSpeed);
+          dragYDot = Math.min(0, (last.py - prev.py) / dtSec);
+        }
+      }
+      const xMeters = (px - cartWidth / 2) * pixelsToMeters() - trackHalfLength;
+      x = clamp(xMeters, -trackHalfLength, trackHalfLength);
+      y = Math.min(0, py - trackYpx);
+    };
+
+    const onPointerUp = (event) => {
+      if (!isDragging) {
+        return;
+      }
+      event.preventDefault();
+      isDragging = false;
+      keysPressed.delete("drag");
+      if (dragHistory.length >= 2) {
+        const last = dragHistory[dragHistory.length - 1];
+        const prev = dragHistory[0];
+        const dtSec = (last.t - prev.t) / 1000;
+        if (dtSec > 0.001) {
+          const vxPx = (last.px - prev.px) / dtSec;
+          const vyPx = (last.py - prev.py) / dtSec;
+          xDot = clamp(vxPx * pixelsToMeters() * throwVelocityGain, -maxSpeed, maxSpeed);
+          yDot = Math.min(0, vyPx * throwVelocityGain);
+        }
+      } else {
+        xDot = 0;
+        yDot = 0;
+      }
     };
 
     const onWindowBlur = () => {
-      lastMouseTimestamp = 0;
-      lastMouseX = 0;
       windForce = 0;
       windAgeSeconds = Number.POSITIVE_INFINITY;
+      keysPressed.clear();
+      if (isDragging) {
+        isDragging = false;
+      }
     };
 
     const onKeyDown = (event) => {
       if (shouldIgnoreKeyControls()) {
         return;
       }
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+      if (event.key === " " || event.key === "ArrowUp") {
+        event.preventDefault();
+        keysPressed.add(event.key);
+        if (!event.repeat && y >= 0) {
+          yDot = -jumpVelocityPx;
+        }
         return;
       }
-      event.preventDefault();
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        keysPressed.add(event.key);
+        return;
+      }
+    };
+
+    const onKeyUp = (event) => {
+      if (event.key === " " || event.key === "ArrowUp" || event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        keysPressed.delete(event.key);
+      }
     };
 
     const onResize = () => {
@@ -410,9 +535,12 @@ function App() {
       render();
     };
 
-    window.addEventListener("mousemove", onMouseMoveWind, { passive: true });
-    window.addEventListener("click", onMouseClickWind, { passive: true });
+    cartZone.addEventListener("pointerdown", onPointerDown);
+    cartZone.addEventListener("pointermove", onPointerMove);
+    cartZone.addEventListener("pointerup", onPointerUp);
+    cartZone.addEventListener("pointercancel", onPointerUp);
     window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
     window.addEventListener("blur", onWindowBlur);
     window.addEventListener("resize", onResize);
     centerCart();
@@ -421,9 +549,12 @@ function App() {
     animationFrameId = window.requestAnimationFrame(simulate);
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMoveWind);
-      window.removeEventListener("click", onMouseClickWind);
+      cartZone.removeEventListener("pointerdown", onPointerDown);
+      cartZone.removeEventListener("pointermove", onPointerMove);
+      cartZone.removeEventListener("pointerup", onPointerUp);
+      cartZone.removeEventListener("pointercancel", onPointerUp);
       window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
       window.removeEventListener("blur", onWindowBlur);
       window.removeEventListener("resize", onResize);
       window.cancelAnimationFrame(animationFrameId);
@@ -566,7 +697,7 @@ function App() {
         </div>
       </div>
 
-      <p className="cart-hint">Try moving your mouse or clicking to make Jared&apos;s life harder</p>
+      <p className="cart-hint">Try dragging the cart to throw it</p>
     </>
   );
 }
