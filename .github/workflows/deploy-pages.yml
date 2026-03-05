@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build CV
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended
+          make -C cv
+
       - name: Build
         run: npm run build
 
