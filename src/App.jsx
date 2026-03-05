@@ -355,12 +355,13 @@ function App() {
       thetaDot += thetaAcc * dt;
       theta += thetaDot * dt;
 
+      const groundBounceRestitution = 0.22;
       if (y < 0 || yDot !== 0) {
         yDot += gravityPx * dt;
         y += yDot * dt;
         if (y >= 0) {
           y = 0;
-          yDot = 0;
+          yDot = -Math.abs(yDot) * groundBounceRestitution;
         }
       }
       if (x < -trackHalfLength) {
@@ -697,7 +698,7 @@ function App() {
         </div>
       </div>
 
-      <p className="cart-hint">Try dragging the cart to throw it</p>
+      <p className="cart-hint">Try and make Jared&apos;s life harder.</p>
     </>
   );
 }
