@@ -33,7 +33,7 @@ jobs:
       - name: Build CV
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y texlive-latex-base texlive-fonts-recommended
+          sudo apt-get install -y texlive-latex-base texlive-latex-recommended texlive-fonts-recommended
           make -C cv
 
       - name: Build
