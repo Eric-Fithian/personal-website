@@ -370,6 +370,13 @@ section li {
   overflow: visible;
 }
 
+.cart-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.7rem;
+  color: #999;
+  text-align: center;
+}
+
 .cart-track {
   position: absolute;
   left: 0;

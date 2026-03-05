@@ -565,6 +565,8 @@ function App() {
           <div className="cart-wheel cart-wheel-right"></div>
         </div>
       </div>
+
+      <p className="cart-hint">Try moving your mouse or clicking to make Jared&apos;s life harder</p>
     </>
   );
 }
