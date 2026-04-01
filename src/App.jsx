@@ -605,7 +605,7 @@ function App() {
           </h2>
           <ul className="plain-list">
             <li>Latent reasoning in LLMs</li>
-            <li>Adaptive neural network architectures</li>
+            <li>LLM diversity for post-training</li>
           </ul>
         </section>
 
