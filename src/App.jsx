@@ -638,16 +638,6 @@ function App() {
 
           <div className="sub-label">Working</div>
           <div className="pub-entry">
-            <div className="pub-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
-            <div className="pub-meta">arXiv preprint, 2026</div>
-            <div className="pub-links">
-              <a href="https://arxiv.org/abs/2509.20617" target="_blank" rel="noopener noreferrer">Paper</a>
-              <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
-          </div>
-
-          <div className="pub-entry">
             <div className="pub-title">A Comparative Study in Surgical AI: Datasets, Foundation Models, and Barriers to Med-AGI</div>
             <div className="pub-authors">
               Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Daniel A. Donoho, X.Y. Han, Neeraj Mainkar, Margaux Masson-Forsythe
@@ -656,6 +646,16 @@ function App() {
             <div className="pub-links">
               <a href="https://arxiv.org/abs/2603.27341" target="_blank" rel="noopener noreferrer">arXiv</a>
               <a href="https://www.medrxiv.org/content/10.64898/2026.03.26.26349455v2" target="_blank" rel="noopener noreferrer">medRxiv</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
+            <div className="pub-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
+            <div className="pub-meta">arXiv preprint, 2026</div>
+            <div className="pub-links">
+              <a href="https://arxiv.org/abs/2509.20617" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">Code</a>
             </div>
           </div>
 
