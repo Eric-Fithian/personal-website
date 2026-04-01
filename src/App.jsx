@@ -601,7 +601,7 @@ function App() {
 
         <section>
           <h2>
-            What I&apos;m reading about <span className="inline-muted">Feb 2026</span>
+            What I&apos;m reading about <span className="inline-muted">April 2026</span>
           </h2>
           <ul className="plain-list">
             <li>Latent reasoning in LLMs</li>
