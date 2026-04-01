@@ -648,10 +648,24 @@ function App() {
           </div>
 
           <div className="pub-entry">
+            <div className="pub-title">A Comparative Study in Surgical AI: Datasets, Foundation Models, and Barriers to Med-AGI</div>
+            <div className="pub-authors">
+              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Daniel A. Donoho, X.Y. Han, Neeraj Mainkar, Margaux Masson-Forsythe
+            </div>
+            <div className="pub-meta">arXiv &amp; medRxiv preprint, 2026</div>
+            <div className="pub-links">
+              <a href="https://arxiv.org/abs/2603.27341" target="_blank" rel="noopener noreferrer">arXiv</a>
+              <a href="https://www.medrxiv.org/content/10.64898/2026.03.26.26349455v2" target="_blank" rel="noopener noreferrer">medRxiv</a>
+            </div>
+          </div>
+
+          {/*
+          <div className="pub-entry">
             <div className="pub-title">Do Neuron-Level Metrics Predict Beneficial Splitting in Neural Networks During Training</div>
             <div className="pub-authors"><strong>Eric Fithian</strong></div>
             <div className="pub-meta">Preprint forthcoming, 2026</div>
           </div>
+          */}
         </section>
 
         <section>
