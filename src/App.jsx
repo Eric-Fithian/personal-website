@@ -595,7 +595,7 @@ function App() {
         <section>
           <h2>About</h2>
           <p>
-            I&apos;m a predoctoral fellow at the Center for Applied AI at Chicago Booth. I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA, graduated one year early). My work spans multimodal ML, NLP, computer vision, LLM-based data extraction, and agentic AI. I&apos;m applying to CS PhD programs for Fall 2027.
+            I&apos;m a predoctoral fellow at the Center for Applied AI at Chicago Booth. I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA, graduated one year early). My work spans multimodal ML, NLP, computer vision, LLM-based data extraction, and agentic AI.
           </p>
         </section>
 
