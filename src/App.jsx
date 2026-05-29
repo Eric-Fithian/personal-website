@@ -613,9 +613,9 @@ function App() {
           <h2>Research</h2>
           <div className="sub-label">Current</div>
           <ul className="plain-list">
-            <li><span className="prof">Prof. Suproteem Sarkar</span> — Embedding models to investigate how stereotypes affect investment</li>
+            <li><span className="prof">Prof. Suproteem Sarkar</span> — LLM post training</li>
             <li><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research</li>
-            <li><span className="prof">Prof. X.Y. Han</span> — Vision-language models for annotating neurosurgical video recordings</li>
+            <li><span className="prof">Prof. X.Y. Han</span> — Vision-language models for surgical AI</li>
           </ul>
 
           <div className="sub-label">Past</div>
@@ -659,13 +659,6 @@ function App() {
             </div>
           </div>
 
-          {/*
-          <div className="pub-entry">
-            <div className="pub-title">Do Neuron-Level Metrics Predict Beneficial Splitting in Neural Networks During Training</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong></div>
-            <div className="pub-meta">Preprint forthcoming, 2026</div>
-          </div>
-          */}
         </section>
 
         <section>
