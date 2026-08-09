@@ -6,72 +6,18 @@ import cartPoleConfig from "../config/cartpole_config.json";
 
 function App() {
   const stageRef = useRef(null);
-  const headshotRef = useRef(null);
-  const glowRef = useRef(null);
-  const citySkyRef = useRef(null);
-  const cityFarRef = useRef(null);
-  const cityMidRef = useRef(null);
-  const cityNearRef = useRef(null);
-  const cityHazeRef = useRef(null);
   const cartZoneRef = useRef(null);
   const cartRef = useRef(null);
   const pendulumRef = useRef(null);
 
   useEffect(() => {
     const stage = stageRef.current;
-    const headshot = headshotRef.current;
-    const glow = glowRef.current;
-    const citySky = citySkyRef.current;
-    const cityFar = cityFarRef.current;
-    const cityMid = cityMidRef.current;
-    const cityNear = cityNearRef.current;
-    const cityHaze = cityHazeRef.current;
-    if (!stage || !headshot || !glow || !citySky || !cityFar || !cityMid || !cityNear || !cityHaze) {
+    if (!stage) {
       return undefined;
     }
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const isCoarsePointer = window.matchMedia("(pointer: coarse)");
     const themes = ["theme-forest", "theme-desert", "theme-snow"];
     let themeIndex = 0;
-    let pointerX = window.innerWidth / 2;
-    let pointerY = window.innerHeight / 2;
-    let rafPending = false;
-
-    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-    const addMediaQueryChangeListener = (mediaQueryList, handler) => {
-      if (typeof mediaQueryList.addEventListener === "function") {
-        mediaQueryList.addEventListener("change", handler);
-        return;
-      }
-      if (typeof mediaQueryList.addListener === "function") {
-        mediaQueryList.addListener(handler);
-        return;
-      }
-      throw new Error("MediaQueryList change listeners are not supported in this browser.");
-    };
-
-    const removeMediaQueryChangeListener = (mediaQueryList, handler) => {
-      if (typeof mediaQueryList.removeEventListener === "function") {
-        mediaQueryList.removeEventListener("change", handler);
-        return;
-      }
-      if (typeof mediaQueryList.removeListener === "function") {
-        mediaQueryList.removeListener(handler);
-      }
-    };
-
-    const resetTransforms = () => {
-      stage.style.transform = "rotateX(0deg) rotateY(0deg)";
-      headshot.style.transform = "translate3d(0px, 0px, 24px) rotateX(0deg) rotateY(0deg)";
-      glow.style.transform = "translate3d(0px, 0px, 0px)";
-      glow.style.opacity = "0.8";
-      citySky.style.transform = "translate3d(0px, 0px, 0px)";
-      cityFar.style.transform = "translate3d(0px, 0px, 0px)";
-      cityMid.style.transform = "translate3d(0px, 0px, 0px)";
-      cityNear.style.transform = "translate3d(0px, 0px, 0px)";
-      cityHaze.style.transform = "translate3d(0px, 0px, 0px)";
-    };
 
     const applyTheme = () => {
       for (const themeName of themes) {
@@ -80,70 +26,9 @@ function App() {
       stage.classList.add(themes[themeIndex]);
     };
 
-    const requestUpdate = () => {
-      if (!rafPending) {
-        rafPending = true;
-        window.requestAnimationFrame(updateParallax);
-      }
-    };
-
     const cycleTheme = () => {
       themeIndex = (themeIndex + 1) % themes.length;
       applyTheme();
-      requestUpdate();
-    };
-
-    const updateParallax = () => {
-      rafPending = false;
-      if (prefersReducedMotion.matches) {
-        resetTransforms();
-        return;
-      }
-
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollNorm = maxScroll > 0 ? (window.scrollY / maxScroll) * 2 - 1 : 0;
-      const rect = stage.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      const cursorX = isCoarsePointer.matches ? centerX : pointerX;
-      const cursorY = isCoarsePointer.matches ? centerY : pointerY;
-
-      const normalizedX = clamp((cursorX - centerX) / (window.innerWidth * 0.45), -1, 1);
-      const normalizedY = clamp((cursorY - centerY) / (window.innerHeight * 0.45), -1, 1);
-
-      const rotateX = (-normalizedY * 12) + (scrollNorm * 4);
-      const rotateY = (normalizedX * 15) + (scrollNorm * -2);
-      const translateX = normalizedX * 3.5;
-      const translateY = (normalizedY * 2.5) - (scrollNorm * 2.25);
-      const depth = 24 + Math.abs(normalizedX) * 1.75 + Math.abs(normalizedY) * 1.25;
-      const glowX = normalizedX * 16;
-      const glowY = normalizedY * 12;
-      const skyX = normalizedX * -4;
-      const skyY = (normalizedY * -2) - (scrollNorm * 2);
-      const farX = normalizedX * -7;
-      const farY = (normalizedY * -3) - (scrollNorm * 3.5);
-      const midX = normalizedX * -10;
-      const midY = (normalizedY * -5) - (scrollNorm * 5.5);
-      const nearX = normalizedX * -14;
-      const nearY = (normalizedY * -7) - (scrollNorm * 8);
-
-      stage.style.transform = `rotateX(${rotateX * 0.18}deg) rotateY(${rotateY * 0.14}deg)`;
-      headshot.style.transform = `translate3d(${translateX}px, ${translateY}px, ${depth}px) rotateX(${rotateX * 0.25}deg) rotateY(${rotateY * 0.25}deg)`;
-      headshot.style.filter = `drop-shadow(${-translateX * 0.5}px ${12 + Math.abs(translateY)}px 18px rgba(0, 0, 0, 0.22))`;
-      glow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0px)`;
-      glow.style.opacity = String(0.72 + (1 - Math.min(1, Math.abs(scrollNorm))) * 0.2);
-      citySky.style.transform = `translate3d(${skyX}px, ${skyY}px, 0px)`;
-      cityFar.style.transform = `translate3d(${farX}px, ${farY}px, 0px)`;
-      cityMid.style.transform = `translate3d(${midX}px, ${midY}px, 0px)`;
-      cityNear.style.transform = `translate3d(${nearX}px, ${nearY}px, 0px)`;
-      cityHaze.style.transform = `translate3d(${nearX * 0.65}px, ${nearY * 0.55}px, 0px)`;
-    };
-
-    const onMouseMove = (event) => {
-      pointerX = event.clientX;
-      pointerY = event.clientY;
-      requestUpdate();
     };
 
     const onThemeKeyDown = (event) => {
@@ -154,23 +39,11 @@ function App() {
       cycleTheme();
     };
 
-    window.addEventListener("mousemove", onMouseMove, { passive: true });
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate, { passive: true });
-    addMediaQueryChangeListener(prefersReducedMotion, requestUpdate);
-    addMediaQueryChangeListener(isCoarsePointer, requestUpdate);
     stage.addEventListener("click", cycleTheme);
     stage.addEventListener("keydown", onThemeKeyDown);
-
     applyTheme();
-    requestUpdate();
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      removeMediaQueryChangeListener(prefersReducedMotion, requestUpdate);
-      removeMediaQueryChangeListener(isCoarsePointer, requestUpdate);
       stage.removeEventListener("click", cycleTheme);
       stage.removeEventListener("keydown", onThemeKeyDown);
     };
@@ -568,15 +441,15 @@ function App() {
         <div className="header">
           <div className="headshot-stage" ref={stageRef} role="button" tabIndex={0} aria-label="Change headshot background theme">
             <div className="headshot-city">
-              <div className="city-layer city-sky" ref={citySkyRef}></div>
-              <div className="city-layer city-far" ref={cityFarRef}></div>
-              <div className="city-layer city-mid" ref={cityMidRef}></div>
-              <div className="city-layer city-near" ref={cityNearRef}></div>
-              <div className="city-layer city-haze" ref={cityHazeRef}></div>
+              <div className="city-layer city-sky"></div>
+              <div className="city-layer city-far"></div>
+              <div className="city-layer city-mid"></div>
+              <div className="city-layer city-near"></div>
+              <div className="city-layer city-haze"></div>
             </div>
-            <div className="headshot-glow" ref={glowRef}></div>
+            <div className="headshot-glow"></div>
             <div className="headshot-fg-clip">
-              <img className="headshot-foreground" ref={headshotRef} src={headshotImage} alt="" />
+              <img className="headshot-foreground" src={headshotImage} alt="" />
             </div>
           </div>
           <div className="header-info">

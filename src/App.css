@@ -42,8 +42,6 @@ a:hover {
   height: 130px;
   position: relative;
   flex-shrink: 0;
-  perspective: 900px;
-  transform-style: preserve-3d;
   isolation: isolate;
 }
 
@@ -61,8 +59,7 @@ a:hover {
 .city-layer {
   position: absolute;
   inset: 0;
-  will-change: transform;
-  transition: transform 120ms ease-out, background 320ms ease;
+  transition: background 320ms ease;
   pointer-events: none;
 }
 
@@ -193,9 +190,7 @@ a:hover {
   z-index: 2;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0.03) 62%, transparent 75%);
-  transform: translate3d(0, 0, 0);
   filter: blur(1px);
-  transition: transform 120ms ease-out, opacity 120ms ease-out;
   opacity: 0.8;
   pointer-events: none;
 }
@@ -226,9 +221,6 @@ a:hover {
   mask-position: center;
   mask-repeat: no-repeat;
   filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18));
-  transform: translate3d(0, 0, 24px);
-  will-change: transform;
-  transition: transform 120ms ease-out, filter 120ms ease-out;
   pointer-events: none;
   user-select: none;
 }
