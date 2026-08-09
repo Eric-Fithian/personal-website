@@ -650,6 +650,23 @@ function App() {
           </div>
 
           <div className="pub-entry">
+            <div className="pub-title">Solving Open Problems in Operations Research Using AI</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, Rad Niazadeh, Pranav Nuti</div>
+            <div className="pub-meta">
+              Working paper, 2026 ·{" "}
+              <a href="/papers/Solving_Open_Problems_in_Operations_Research_using_AI_poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+              {" "}at{" "}
+              <a href="https://pritishkamath.github.io/ai-tcs-stoc-2026/#posters" target="_blank" rel="noopener noreferrer">Can AI do Theory? (STOC TheoryFest 2026)</a>
+              {" "}· Presented at{" "}
+              <a href="https://sites.google.com/view/aieconcs26/" target="_blank" rel="noopener noreferrer">AI-Driven Research in EconCS (EC 2026)</a>
+            </div>
+            <div className="pub-links">
+              <a href="https://pranav-nuti.github.io/open-problems-in-or/index.html?journal=Mathematics+of+Operations+Research" target="_blank" rel="noopener noreferrer">Website</a>
+              <a href="/papers/Solving_Open_Problems_in_Operations_Research_using_AI.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
             <div className="pub-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
             <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
             <div className="pub-meta">arXiv preprint, 2026</div>
