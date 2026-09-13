@@ -403,7 +403,7 @@ function App() {
           <div className="header-info">
             <h1>Eric Fithian</h1>
             <div className="role">Research Professional / Predoctoral Fellow</div>
-            <div className="affiliation">Center for Applied AI · University of Chicago Booth</div>
+            <div className="affiliation">Center for Applied AI · University of Chicago</div>
             <div className="links">
               <a href="mailto:efithian@uchicago.edu" target="_blank" rel="noopener noreferrer">Email</a>
               <a href="/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
@@ -416,7 +416,7 @@ function App() {
         <section>
           <h2>About</h2>
           <p>
-            I&apos;m a predoctoral fellow at the Center for Applied AI at Chicago Booth. I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA, graduated one year early). My work spans multimodal ML, NLP, computer vision, LLM-based data extraction, and agentic AI.
+            I&apos;m a predoctoral fellow at the University of Chicago. I graduated from CU Boulder in 2025 with a B.S. in Computer Science (<em>summa cum laude</em>, 4.0 GPA, graduated one year early). My work spans post-training, NLP, computer vision, and agentic AI.
           </p>
         </section>
 
@@ -434,14 +434,15 @@ function App() {
           <h2>Research</h2>
           <div className="sub-label">Current</div>
           <ul className="plain-list">
-            <li><span className="prof">Prof. Suproteem Sarkar</span> — LLM post training</li>
-            <li><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research</li>
+            <li><span className="prof">Prof. Suproteem Sarkar</span> — LLM post-training</li>
             <li><span className="prof">Prof. X.Y. Han</span> — Vision-language models for surgical AI</li>
+            <li><span className="prof">Prof. Sarah Jabbour</span> — Foundation models for chest X-rays</li>
+            <li><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research at scale</li>
           </ul>
 
           <div className="sub-label">Past</div>
           <ul className="plain-list">
-            <li><span className="prof">Prof. Jacob Conway</span> — End-to-end NLP pipelines across 11M news documents to study journalist ideology ·{" "}
+            <li><span className="prof">Prof. Jacob Conway</span> — NLP pipelines across 11M news documents to study journalist political ideology ·{" "}
               <a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
             <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models ·{" "}
               <a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
@@ -536,7 +537,7 @@ function App() {
         </div>
       </div>
 
-      <p className="cart-hint">Try and make Jared&apos;s life harder.</p>
+      <p className="cart-hint">Try and make Jared&apos;s life harder. The Sisyphus of pendulums. Do you imagine Jared to be happy?</p>
     </>
   );
 }
