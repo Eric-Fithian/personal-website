@@ -13,5 +13,5 @@ This is a React + Vite static personal/academic website. No backend, no database
 
 **Notes:**
 - The build script copies `cv/cv.pdf` into `public/cv/` before running Vite build; this gracefully skips if the PDF is missing (LaTeX toolchain not required for dev).
-- The headshot theme cycles on click (forest → desert → snow). The cart-pole simulation at page bottom runs a PPO policy in-browser from a bundled JSON weights file.
+- The headshot is a static circle-masked image (`src/assets/headshot.jpg`). The cart-pole simulation at page bottom runs a PPO policy in-browser from a bundled JSON weights file.
 - The Python RL training script (`scripts/train_cartpole_ppo.py`) and LaTeX CV build (`cv/Makefile`) are offline tooling and not needed for normal website development.

@@ -1,53 +1,13 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
-import headshotImage from "../real_headshot.png";
+import headshotImage from "./assets/headshot.jpg";
 import cartPolePolicy from "./assets/cartpole_policy.json";
 import cartPoleConfig from "../config/cartpole_config.json";
 
 function App() {
-  const stageRef = useRef(null);
   const cartZoneRef = useRef(null);
   const cartRef = useRef(null);
   const pendulumRef = useRef(null);
-
-  useEffect(() => {
-    const stage = stageRef.current;
-    if (!stage) {
-      return undefined;
-    }
-
-    const themes = ["theme-forest", "theme-desert", "theme-snow"];
-    let themeIndex = 0;
-
-    const applyTheme = () => {
-      for (const themeName of themes) {
-        stage.classList.remove(themeName);
-      }
-      stage.classList.add(themes[themeIndex]);
-    };
-
-    const cycleTheme = () => {
-      themeIndex = (themeIndex + 1) % themes.length;
-      applyTheme();
-    };
-
-    const onThemeKeyDown = (event) => {
-      if (event.key !== "Enter" && event.key !== " ") {
-        return;
-      }
-      event.preventDefault();
-      cycleTheme();
-    };
-
-    stage.addEventListener("click", cycleTheme);
-    stage.addEventListener("keydown", onThemeKeyDown);
-    applyTheme();
-
-    return () => {
-      stage.removeEventListener("click", cycleTheme);
-      stage.removeEventListener("keydown", onThemeKeyDown);
-    };
-  }, []);
 
   useEffect(() => {
     const cartZone = cartZoneRef.current;
@@ -439,19 +399,7 @@ function App() {
     <>
       <main className="container">
         <div className="header">
-          <div className="headshot-stage" ref={stageRef} role="button" tabIndex={0} aria-label="Change headshot background theme">
-            <div className="headshot-city">
-              <div className="city-layer city-sky"></div>
-              <div className="city-layer city-far"></div>
-              <div className="city-layer city-mid"></div>
-              <div className="city-layer city-near"></div>
-              <div className="city-layer city-haze"></div>
-            </div>
-            <div className="headshot-glow"></div>
-            <div className="headshot-fg-clip">
-              <img className="headshot-foreground" src={headshotImage} alt="" />
-            </div>
-          </div>
+          <img className="headshot" src={headshotImage} alt="Eric Fithian" />
           <div className="header-info">
             <h1>Eric Fithian</h1>
             <div className="role">Research Professional / Predoctoral Fellow</div>
@@ -474,7 +422,7 @@ function App() {
 
         <section>
           <h2>
-            What I&apos;m reading about <span className="inline-muted">April 2026</span>
+            What I&apos;m reading about <span className="inline-muted">August 2026</span>
           </h2>
           <ul className="plain-list">
             <li>Latent reasoning in LLMs</li>
