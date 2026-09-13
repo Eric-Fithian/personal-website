@@ -24,3 +24,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Copied from cv/cv.pdf by the build script
+public/cv
