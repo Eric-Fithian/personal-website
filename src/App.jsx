@@ -441,8 +441,10 @@ function App() {
 
           <div className="sub-label">Past</div>
           <ul className="plain-list">
-            <li><span className="prof">Prof. Jacob Conway</span> — End-to-end NLP pipelines across 11M news documents to study journalist ideology</li>
-            <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models</li>
+            <li><span className="prof">Prof. Jacob Conway</span> — End-to-end NLP pipelines across 11M news documents to study journalist ideology{" "}
+              (<a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">paper</a>)</li>
+            <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models{" "}
+              (<a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">paper</a>)</li>
             <li><span className="prof">Prof. Theodora Chaspari</span> (CU Boulder) — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
           </ul>
         </section>
@@ -487,16 +489,6 @@ function App() {
             </div>
           </div>
 
-          <div className="pub-entry">
-            <div className="pub-title">DELM: A Python Toolkit for Data Extraction with Language Models</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev</div>
-            <div className="pub-meta">arXiv preprint, 2026</div>
-            <div className="pub-links">
-              <a href="https://arxiv.org/abs/2509.20617" target="_blank" rel="noopener noreferrer">Paper</a>
-              <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">Code</a>
-            </div>
-          </div>
-
         </section>
 
         <section>
@@ -506,7 +498,8 @@ function App() {
             <span className="software-links">
               <a href="https://github.com/Center-for-Applied-AI/delm" target="_blank" rel="noopener noreferrer">GitHub</a> &nbsp;
               <a href="https://pypi.org/project/delm/" target="_blank" rel="noopener noreferrer">PyPI</a> &nbsp;
-              <a href="https://center-for-applied-ai.github.io/delm/" target="_blank" rel="noopener noreferrer">Docs</a>
+              <a href="https://center-for-applied-ai.github.io/delm/" target="_blank" rel="noopener noreferrer">Docs</a> &nbsp;
+              <a href="https://arxiv.org/abs/2509.20617" target="_blank" rel="noopener noreferrer">Paper</a>
             </span>
           </p>
         </section>
