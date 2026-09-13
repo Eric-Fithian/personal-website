@@ -441,10 +441,10 @@ function App() {
 
           <div className="sub-label">Past</div>
           <ul className="plain-list">
-            <li><span className="prof">Prof. Jacob Conway</span> — End-to-end NLP pipelines across 11M news documents to study journalist ideology{" "}
-              (<a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">paper</a>)</li>
-            <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models{" "}
-              (<a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">paper</a>)</li>
+            <li><span className="prof">Prof. Jacob Conway</span> — End-to-end NLP pipelines across 11M news documents to study journalist ideology ·{" "}
+              <a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
+            <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models ·{" "}
+              <a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
             <li><span className="prof">Prof. Theodora Chaspari</span> (CU Boulder) — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
           </ul>
         </section>
