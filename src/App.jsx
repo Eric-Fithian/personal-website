@@ -462,6 +462,15 @@ function App() {
 
           <div className="sub-label">Working</div>
           <div className="pub-entry">
+            <div className="pub-title">The Reward Horizon Problem: Learning From Delayed Feedback</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, Suproteem K. Sarkar</div>
+            <div className="pub-meta">Working paper, 2026</div>
+            <div className="pub-links">
+              <a href="/papers/The_Reward_Horizon_Problem.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
             <div className="pub-title">A Comparative Study in Surgical AI: Datasets, Foundation Models, and Barriers to Med-AGI</div>
             <div className="pub-authors">
               Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Daniel A. Donoho, X.Y. Han, Neeraj Mainkar, Margaux Masson-Forsythe
