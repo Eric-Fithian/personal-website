@@ -463,9 +463,9 @@ function App() {
           </div>
 
           <div className="pub-entry">
-            <div className="pub-title">A Comparative Study in Surgical AI: Datasets, Foundation Models, and Barriers to Med-AGI</div>
+            <div className="pub-title">A Comparative Study in Surgical AI: Potential and Limitations of Data, Compute, and Scaling</div>
             <div className="pub-authors">
-              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Daniel A. Donoho, X.Y. Han, Neeraj Mainkar, Margaux Masson-Forsythe
+              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Neeraj Mainkar, Margaux Masson-Forsythe, Daniel A. Donoho, X.Y. Han
             </div>
             <div className="pub-meta">arXiv &amp; medRxiv preprint, 2026</div>
             <div className="pub-links">
