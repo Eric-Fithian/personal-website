@@ -403,7 +403,7 @@ function App() {
           <div className="header-info">
             <h1>Eric Fithian</h1>
             <div className="role">Research Professional / Predoctoral Fellow</div>
-            <div className="affiliation">Center for Applied AI · University of Chicago</div>
+            <div className="affiliation">University of Chicago</div>
             <div className="links">
               <a href="mailto:efithian@uchicago.edu" target="_blank" rel="noopener noreferrer">Email</a>
               <a href="/cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
@@ -467,6 +467,15 @@ function App() {
             <div className="pub-meta">Working paper, 2026</div>
             <div className="pub-links">
               <a href="/papers/The_Reward_Horizon_Problem.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
+            <div className="pub-title">Fine-Tuning Fixes Mode Collapse and Over-Dispersion in LLMs</div>
+            <div className="pub-authors">Kirill Skobelev, <strong>Eric Fithian</strong>, X.Y. Han</div>
+            <div className="pub-meta">arXiv preprint, 2026</div>
+            <div className="pub-links">
+              <a href="https://arxiv.org/abs/2609.16454" target="_blank" rel="noopener noreferrer">arXiv</a>
             </div>
           </div>
 
