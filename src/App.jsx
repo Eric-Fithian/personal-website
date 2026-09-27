@@ -471,6 +471,15 @@ function App() {
           </div>
 
           <div className="pub-entry">
+            <div className="pub-title">Don&apos;t Repeat Yourself: Self-Supervised Fine-Tuning for Coverage</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev, X.Y. Han</div>
+            <div className="pub-meta">Working paper, 2026</div>
+            <div className="pub-links">
+              <a href="/papers/Dont_Repeat_Yourself_Self-Supervised_Fine-Tuning_for_Coverage.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
             <div className="pub-title">Fine-Tuning Fixes Mode Collapse and Over-Dispersion in LLMs</div>
             <div className="pub-authors">Kirill Skobelev, <strong>Eric Fithian</strong>, X.Y. Han</div>
             <div className="pub-meta">arXiv preprint, 2026</div>
