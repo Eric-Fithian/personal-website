@@ -153,6 +153,14 @@ section li {
   font-weight: 600;
 }
 
+.school-logo {
+  height: 1.1em;
+  width: 1.1em;
+  object-fit: contain;
+  vertical-align: -0.2em;
+  margin-right: 0.4em;
+}
+
 .software-links {
   font-size: 0.83rem;
 }

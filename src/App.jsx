@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
 import headshotImage from "./assets/headshot.jpg";
+import uchicagoLogo from "./assets/logos/uchicago.svg";
+import cuBoulderLogo from "./assets/logos/cu-boulder.svg";
 import cartPolePolicy from "./assets/cartpole_policy.json";
 import cartPoleConfig from "../config/cartpole_config.json";
 
@@ -431,35 +433,7 @@ function App() {
         </section>
 
         <section>
-          <h2>Research</h2>
-          <div className="sub-label">Current</div>
-          <ul className="plain-list">
-            <li><span className="prof">Prof. Suproteem Sarkar</span> — LLM post-training</li>
-            <li><span className="prof">Prof. X.Y. Han</span> — Vision-language models for surgical AI</li>
-            <li><span className="prof">Prof. Sarah Jabbour</span> — Foundation models for chest X-rays</li>
-            <li><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research at scale</li>
-          </ul>
-
-          <div className="sub-label">Past</div>
-          <ul className="plain-list">
-            <li><span className="prof">Prof. Jacob Conway</span> — NLP pipelines across 11M news documents to study journalist political ideology ·{" "}
-              <a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
-            <li><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models ·{" "}
-              <a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
-            <li><span className="prof">Prof. Theodora Chaspari</span> (CU Boulder) — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
-          </ul>
-        </section>
-
-        <section>
           <h2>Papers</h2>
-          <div className="sub-label">Published</div>
-          <div className="pub-entry">
-            <div className="pub-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
-            <div className="pub-meta">ACM ICMI 2025 · Poster presented in Canberra, Australia</div>
-            <div className="pub-links"><a href="https://doi.org/10.1145/3716553.3750757" target="_blank" rel="noopener noreferrer">Paper</a></div>
-          </div>
-
           <div className="sub-label">Working</div>
           <div className="pub-entry">
             <div className="pub-title">The Reward Horizon Problem: Learning From Delayed Feedback</div>
@@ -517,6 +491,33 @@ function App() {
             </div>
           </div>
 
+          <div className="sub-label">Published</div>
+          <div className="pub-entry">
+            <div className="pub-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
+            <div className="pub-meta">ACM ICMI 2025 · Poster presented in Canberra, Australia</div>
+            <div className="pub-links"><a href="https://doi.org/10.1145/3716553.3750757" target="_blank" rel="noopener noreferrer">Paper</a></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Collaborations</h2>
+          <div className="sub-label">Current</div>
+          <ul className="plain-list">
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Suproteem Sarkar</span> — LLM post-training</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. X.Y. Han</span> — Vision-language models for surgical AI</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Sarah Jabbour</span> — Foundation models for chest X-rays</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research at scale</li>
+          </ul>
+
+          <div className="sub-label">Past</div>
+          <ul className="plain-list">
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Jacob Conway</span> — NLP pipelines across 11M news documents to study journalist political ideology ·{" "}
+              <a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models ·{" "}
+              <a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
+            <li><img className="school-logo" src={cuBoulderLogo} alt="University of Colorado Boulder" title="University of Colorado Boulder" /><span className="prof">Prof. Theodora Chaspari</span> — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
+          </ul>
         </section>
 
         <section>
