@@ -449,7 +449,7 @@ function App() {
             <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev, X.Y. Han</div>
             <div className="pub-meta">Working paper, 2026</div>
             <div className="pub-links">
-              <a href="/papers/Dont_Repeat_Yourself_Self-Supervised_Fine-Tuning_for_Coverage.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+              <a href="https://arxiv.org/abs/2609.31688" target="_blank" rel="noopener noreferrer">arxiv</a>
             </div>
           </div>
 
