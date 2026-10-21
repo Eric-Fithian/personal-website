@@ -558,6 +558,7 @@ function App() {
           <ul className="plain-list education-list">
             <li><strong>1st Place</strong>, VizWiz VQA Challenge — among ~150 graduate students, as an undergraduate (2025)</li>
             <li><strong>CU Engineering Silver Medal nominee</strong> — one CS senior nominated per year (2025)</li>
+            <li><strong>Chancellor&apos;s Recognition Award</strong> — awarded to fewer than 50 CU Boulder undergraduates with all A&apos;s (2025)</li>
           </ul>
         </section>
 
