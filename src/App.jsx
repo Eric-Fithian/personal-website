@@ -424,11 +424,12 @@ function App() {
 
         <section>
           <h2>
-            What I&apos;m reading about <span className="inline-muted">August 2026</span>
+            What I&apos;m reading about <span className="inline-muted">October 2026</span>
           </h2>
           <ul className="plain-list">
+            <li>Long horizon post-training</li>
             <li>Latent reasoning in LLMs</li>
-            <li>LLM diversity for post-training</li>
+            <li>LLM exploration and output diversity</li>
           </ul>
         </section>
 
