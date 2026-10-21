@@ -441,6 +441,7 @@ function App() {
             <div className="pub-meta">
               Working paper, 2026 · Accepted poster at{" "}
               <a href="https://tai-eval.github.io/" target="_blank" rel="noopener noreferrer">TAE: Can We Trust AI Evaluation? (NeurIPS 2026 workshop)</a>
+              {" "}· Under review at ICLR 2027
             </div>
             <div className="pub-links">
               <a href="/papers/The_Reward_Horizon_Problem.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
@@ -453,6 +454,7 @@ function App() {
             <div className="pub-meta">
               Working paper, 2026 · Accepted to{" "}
               <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
+              {" "}· Under review at ICLR 2027
             </div>
             <div className="pub-links">
               <a href="https://arxiv.org/abs/2609.31688" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -465,6 +467,7 @@ function App() {
             <div className="pub-meta">
               arXiv preprint, 2026 · Accepted to{" "}
               <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
+              {" "}· Under review at ICLR 2027
             </div>
             <div className="pub-links">
               <a href="https://arxiv.org/abs/2609.16454" target="_blank" rel="noopener noreferrer">arXiv</a>
@@ -496,6 +499,7 @@ function App() {
             <div className="pub-meta">
               arXiv &amp; medRxiv preprint, 2026 · Accepted to{" "}
               <a href="https://genai4health.github.io/2026-NeurIPS/" target="_blank" rel="noopener noreferrer">GenAI for Health (NeurIPS 2026 workshop)</a>
+              {" "}· Under review at <em>NEJM AI</em>
             </div>
             <div className="pub-links">
               <a href="https://arxiv.org/abs/2603.27341" target="_blank" rel="noopener noreferrer">arXiv</a>
