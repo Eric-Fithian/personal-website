@@ -438,7 +438,10 @@ function App() {
           <div className="pub-entry">
             <div className="pub-title">The Reward Horizon Problem: Learning From Delayed Feedback</div>
             <div className="pub-authors"><strong>Eric Fithian</strong>, Suproteem K. Sarkar</div>
-            <div className="pub-meta">Working paper, 2026</div>
+            <div className="pub-meta">
+              Working paper, 2026 · Accepted poster at{" "}
+              <a href="https://tai-eval.github.io/" target="_blank" rel="noopener noreferrer">TAE: Can We Trust AI Evaluation? (NeurIPS 2026 workshop)</a>
+            </div>
             <div className="pub-links">
               <a href="/papers/The_Reward_Horizon_Problem.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
             </div>
@@ -447,30 +450,24 @@ function App() {
           <div className="pub-entry">
             <div className="pub-title">Don&apos;t Repeat Yourself: Self-Supervised Fine-Tuning for Coverage</div>
             <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev, X.Y. Han</div>
-            <div className="pub-meta">Working paper, 2026</div>
+            <div className="pub-meta">
+              Working paper, 2026 · Accepted to{" "}
+              <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
+            </div>
             <div className="pub-links">
-              <a href="https://arxiv.org/abs/2609.31688" target="_blank" rel="noopener noreferrer">arxiv</a>
+              <a href="https://arxiv.org/abs/2609.31688" target="_blank" rel="noopener noreferrer">arXiv</a>
             </div>
           </div>
 
           <div className="pub-entry">
             <div className="pub-title">Fine-Tuning Fixes Mode Collapse and Over-Dispersion in LLMs</div>
             <div className="pub-authors">Kirill Skobelev, <strong>Eric Fithian</strong>, X.Y. Han</div>
-            <div className="pub-meta">arXiv preprint, 2026</div>
+            <div className="pub-meta">
+              arXiv preprint, 2026 · Accepted to{" "}
+              <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
+            </div>
             <div className="pub-links">
               <a href="https://arxiv.org/abs/2609.16454" target="_blank" rel="noopener noreferrer">arXiv</a>
-            </div>
-          </div>
-
-          <div className="pub-entry">
-            <div className="pub-title">A Comparative Study in Surgical AI: Potential and Limitations of Data, Compute, and Scaling</div>
-            <div className="pub-authors">
-              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Neeraj Mainkar, Margaux Masson-Forsythe, Daniel A. Donoho, X.Y. Han
-            </div>
-            <div className="pub-meta">arXiv &amp; medRxiv preprint, 2026</div>
-            <div className="pub-links">
-              <a href="https://arxiv.org/abs/2603.27341" target="_blank" rel="noopener noreferrer">arXiv</a>
-              <a href="https://www.medrxiv.org/content/10.64898/2026.03.26.26349455v2" target="_blank" rel="noopener noreferrer">medRxiv</a>
             </div>
           </div>
 
@@ -488,6 +485,21 @@ function App() {
             <div className="pub-links">
               <a href="https://pranav-nuti.github.io/open-problems-in-or/index.html?journal=Mathematics+of+Operations+Research" target="_blank" rel="noopener noreferrer">Website</a>
               <a href="/papers/Solving_Open_Problems_in_Operations_Research_using_AI.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+            </div>
+          </div>
+
+          <div className="pub-entry">
+            <div className="pub-title">A Comparative Study in Surgical AI: Potential and Limitations of Data, Compute, and Scaling</div>
+            <div className="pub-authors">
+              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Neeraj Mainkar, Margaux Masson-Forsythe, Daniel A. Donoho, X.Y. Han
+            </div>
+            <div className="pub-meta">
+              arXiv &amp; medRxiv preprint, 2026 · Accepted to{" "}
+              <a href="https://genai4health.github.io/2026-NeurIPS/" target="_blank" rel="noopener noreferrer">GenAI for Health (NeurIPS 2026 workshop)</a>
+            </div>
+            <div className="pub-links">
+              <a href="https://arxiv.org/abs/2603.27341" target="_blank" rel="noopener noreferrer">arXiv</a>
+              <a href="https://www.medrxiv.org/content/10.64898/2026.03.26.26349455v2" target="_blank" rel="noopener noreferrer">medRxiv</a>
             </div>
           </div>
 
