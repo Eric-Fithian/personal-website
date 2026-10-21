@@ -428,8 +428,8 @@ function App() {
           </h2>
           <ul className="plain-list">
             <li>Long horizon post-training</li>
-            <li>Latent reasoning in LLMs</li>
             <li>LLM exploration and output diversity</li>
+            <li>Latent reasoning in LLMs</li>
           </ul>
         </section>
 
