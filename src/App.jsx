@@ -438,7 +438,7 @@ function App() {
           <div className="sub-label">Working</div>
           <div className="pub-entry">
             <div className="pub-title">The Reward Horizon Problem: Learning From Delayed Feedback</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Suproteem K. Sarkar</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, <a href="https://suproteem.is/" target="_blank" rel="noopener noreferrer">Suproteem K. Sarkar</a></div>
             <div className="pub-meta">
               Working paper, 2026 · Accepted poster at{" "}
               <a href="https://tai-eval.github.io/" target="_blank" rel="noopener noreferrer">TAE: Can We Trust AI Evaluation? (NeurIPS 2026 workshop)</a>
@@ -451,7 +451,7 @@ function App() {
 
           <div className="pub-entry">
             <div className="pub-title">Don&apos;t Repeat Yourself: Self-Supervised Fine-Tuning for Coverage</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Kirill Skobelev, X.Y. Han</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, <a href="https://www.skobelev.me/" target="_blank" rel="noopener noreferrer">Kirill Skobelev</a>, <a href="https://xyhan.me/" target="_blank" rel="noopener noreferrer">X.Y. Han</a></div>
             <div className="pub-meta">
               Working paper, 2026 · Accepted to{" "}
               <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
@@ -464,7 +464,7 @@ function App() {
 
           <div className="pub-entry">
             <div className="pub-title">Fine-Tuning Fixes Mode Collapse and Over-Dispersion in LLMs</div>
-            <div className="pub-authors">Kirill Skobelev, <strong>Eric Fithian</strong>, X.Y. Han</div>
+            <div className="pub-authors"><a href="https://www.skobelev.me/" target="_blank" rel="noopener noreferrer">Kirill Skobelev</a>, <strong>Eric Fithian</strong>, <a href="https://xyhan.me/" target="_blank" rel="noopener noreferrer">X.Y. Han</a></div>
             <div className="pub-meta">
               arXiv preprint, 2026 · Accepted to{" "}
               <a href="https://pretrain2posttrain.github.io/" target="_blank" rel="noopener noreferrer">Transitioning from Pre-Training to Post-Training (NeurIPS 2026 workshop)</a>
@@ -477,7 +477,7 @@ function App() {
 
           <div className="pub-entry">
             <div className="pub-title">Solving Open Problems in Operations Research Using AI</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Rad Niazadeh, Pranav Nuti</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, <a href="https://faculty.chicagobooth.edu/rad-niazadeh" target="_blank" rel="noopener noreferrer">Rad Niazadeh</a>, <a href="https://pranavnuti.com/" target="_blank" rel="noopener noreferrer">Pranav Nuti</a></div>
             <div className="pub-meta">
               Working paper, 2026 ·{" "}
               <a href="/papers/Solving_Open_Problems_in_Operations_Research_using_AI_poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
@@ -495,7 +495,7 @@ function App() {
           <div className="pub-entry">
             <div className="pub-title">A Comparative Study in Surgical AI: Potential and Limitations of Data, Compute, and Scaling</div>
             <div className="pub-authors">
-              Kirill Skobelev, <strong>Eric Fithian</strong>, Yegor Baranovski, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Neeraj Mainkar, Margaux Masson-Forsythe, Daniel A. Donoho, X.Y. Han
+              <a href="https://www.skobelev.me/" target="_blank" rel="noopener noreferrer">Kirill Skobelev</a>, <strong>Eric Fithian</strong>, <a href="https://yegorbaranovski.com/" target="_blank" rel="noopener noreferrer">Yegor Baranovski</a>, Jack Cook, Sandeep Angara, Shauna Otto, Zhuang-Fang Yi, John Zhu, Neeraj Mainkar, <a href="https://margauxmasson.com/" target="_blank" rel="noopener noreferrer">Margaux Masson-Forsythe</a>, <a href="https://developingbrainresearchlab.org/danielad-bio/" target="_blank" rel="noopener noreferrer">Daniel A. Donoho</a>, <a href="https://xyhan.me/" target="_blank" rel="noopener noreferrer">X.Y. Han</a>
             </div>
             <div className="pub-meta">
               arXiv &amp; medRxiv preprint, 2026 · Accepted to{" "}
@@ -511,7 +511,7 @@ function App() {
           <div className="sub-label">Published</div>
           <div className="pub-entry">
             <div className="pub-title">Leveraging Pre-Trained Transformers and Facial Embeddings for Multimodal Hirability Prediction in Job Interviews</div>
-            <div className="pub-authors"><strong>Eric Fithian</strong>, Theodora Chaspari</div>
+            <div className="pub-authors"><strong>Eric Fithian</strong>, <a href="https://www.colorado.edu/cs/theodora-chaspari" target="_blank" rel="noopener noreferrer">Theodora Chaspari</a></div>
             <div className="pub-meta">ACM ICMI 2025 · Poster presented in Canberra, Australia</div>
             <div className="pub-links"><a href="https://doi.org/10.1145/3716553.3750757" target="_blank" rel="noopener noreferrer">Paper</a></div>
           </div>
@@ -521,19 +521,19 @@ function App() {
           <h2>Collaborations</h2>
           <div className="sub-label">Current</div>
           <ul className="plain-list">
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Suproteem Sarkar</span> — LLM post-training</li>
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. X.Y. Han</span> — Vision-language models for surgical AI</li>
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Sarah Jabbour</span> — Foundation models for chest X-rays</li>
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Rad Niazadeh</span> — Using LLMs to solve open problems in mathematics of operations research at scale</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://suproteem.is/" target="_blank" rel="noopener noreferrer">Suproteem Sarkar</a></span> — LLM post-training</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://xyhan.me/" target="_blank" rel="noopener noreferrer">X.Y. Han</a></span> — Vision-language models for surgical AI</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://sjabbour.github.io/" target="_blank" rel="noopener noreferrer">Sarah Jabbour</a></span> — Foundation models for chest X-rays</li>
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://faculty.chicagobooth.edu/rad-niazadeh" target="_blank" rel="noopener noreferrer">Rad Niazadeh</a></span> — Using LLMs to solve open problems in mathematics of operations research at scale</li>
           </ul>
 
           <div className="sub-label">Past</div>
           <ul className="plain-list">
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Jacob Conway</span> — NLP pipelines across 11M news documents to study journalist political ideology ·{" "}
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://jacob-conway.com/" target="_blank" rel="noopener noreferrer">Jacob Conway</a></span> — NLP pipelines across 11M news documents to study journalist political ideology ·{" "}
               <a href="https://jacob-conway.com/pdfs/journalist_ideology.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
-            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. Giovanni Compiani</span> — Pretrained embedding models for consumer choice models ·{" "}
+            <li><img className="school-logo" src={uchicagoLogo} alt="University of Chicago" title="University of Chicago" /><span className="prof">Prof. <a href="https://giovannicompiani.com/" target="_blank" rel="noopener noreferrer">Giovanni Compiani</a></span> — Pretrained embedding models for consumer choice models ·{" "}
               <a href="https://giovannicompiani.com/documents/demand-estimation-with-text-and-images.pdf" target="_blank" rel="noopener noreferrer">Paper</a></li>
-            <li><img className="school-logo" src={cuBoulderLogo} alt="University of Colorado Boulder" title="University of Colorado Boulder" /><span className="prof">Prof. Theodora Chaspari</span> — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
+            <li><img className="school-logo" src={cuBoulderLogo} alt="University of Colorado Boulder" title="University of Colorado Boulder" /><span className="prof">Prof. <a href="https://www.colorado.edu/cs/theodora-chaspari" target="_blank" rel="noopener noreferrer">Theodora Chaspari</a></span> — Multimodal hirability prediction; first-authored ICMI 2025 paper</li>
           </ul>
         </section>
 

@@ -130,6 +130,20 @@ section li {
   color: var(--text-secondary);
 }
 
+.pub-authors a,
+.plain-list .prof a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 2px;
+}
+
+.pub-authors a:hover,
+.plain-list .prof a:hover {
+  color: var(--accent-hover);
+  text-decoration-color: currentColor;
+}
+
 .pub-links {
   display: inline;
   font-size: 0.83rem;
